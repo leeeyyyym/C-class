@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="파이썬 경험이 있는 고등학생을 대상으로, MBTI 성격유형 테스트 게임을 만들면서 C언어의 핵심 문법을 7차시에 걸쳐 완성하는 프로젝트 기반 학습 교재입니다.">
+        <meta name="description" content="파이썬 경험이 있는 고등학생을 대상으로, MBTI 성격유형 테스트 게임을 만들면서 C언어의 핵심 개념을 7차시에 걸쳐 익히는 프로젝트 기반 강의 교재입니다.">
       
       
         <meta name="author" content="Created with EduFlow">
@@ -27,7 +27,7 @@
     
     
       
-        <title>변수와 자료형 — 이름표를 붙이자 - C언어 기초 with MBTI 게임</title>
+        <title>변수와 자료형 — 플레이어 이름 입력받기 - C언어 기초 with MBTI 게임</title>
       
     
     
@@ -114,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              변수와 자료형 — 이름표를 붙이자
+              변수와 자료형 — 플레이어 이름 입력받기
             
           </span>
         </div>
@@ -244,7 +244,7 @@
   
     
   
-  Part 1 - C언어와의 첫 만남
+  Part 1 - C언어와의 첫 만남 — 게임의 시작
 
         </a>
       </li>
@@ -260,13 +260,13 @@
     
     
       <li class="md-tabs__item">
-        <a href="../chapter04/" class="md-tabs__link">
+        <a href="../chapter03/" class="md-tabs__link">
           
   
   
     
   
-  Part 2 - 게임에 두뇌를 달자 — 조건문과 반복문
+  Part 2 - 게임 로직 만들기 — 조건문과 반복문
 
         </a>
       </li>
@@ -282,7 +282,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../chapter08/" class="md-tabs__link">
+        <a href="../chapter05/" class="md-tabs__link">
           
   
   
@@ -304,7 +304,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../chapter10/" class="md-tabs__link">
+        <a href="../chapter06/" class="md-tabs__link">
           
   
   
@@ -326,13 +326,13 @@
     
     
       <li class="md-tabs__item">
-        <a href="../chapter13/" class="md-tabs__link">
+        <a href="../chapter08/" class="md-tabs__link">
           
   
   
     
   
-  Part 5 - 한 발짝 더 — 포인터·비트연산자 맛보기와 게임 완성
+  Part 5 - 한 걸음 더 — 포인터·비트연산자 맛보기와 게임 완성
 
         </a>
       </li>
@@ -415,8 +415,6 @@
       
         
       
-        
-      
     
     
     
@@ -443,7 +441,7 @@
   <span class="md-ellipsis">
     
   
-    Part 1 - C언어와의 첫 만남
+    Part 1 - C언어와의 첫 만남 — 게임의 시작
   
 
     
@@ -459,7 +457,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Part 1 - C언어와의 첫 만남
+    Part 1 - C언어와의 첫 만남 — 게임의 시작
   
 
           </label>
@@ -479,7 +477,7 @@
   <span class="md-ellipsis">
     
   
-    C언어, 파이썬과 뭐가 다를까?
+    Hello, C! — 개발 환경 준비와 첫 프로그램
   
 
     
@@ -516,7 +514,7 @@
   <span class="md-ellipsis">
     
   
-    변수와 자료형 — 이름표를 붙이자
+    변수와 자료형 — 플레이어 이름 입력받기
   
 
     
@@ -534,7 +532,7 @@
   <span class="md-ellipsis">
     
   
-    변수와 자료형 — 이름표를 붙이자
+    변수와 자료형 — 플레이어 이름 입력받기
   
 
     
@@ -583,10 +581,21 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#type" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       
-        개념: 자료형(Type) — 택배 상자의 라벨
+        개념: 변수 선언과 자료형
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        개념: 형식 지정자
       
     </span>
   </a>
@@ -599,7 +608,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#_6" class="md-nav__link">
     <span class="md-ellipsis">
       
         🔨 따라하기
@@ -614,7 +623,7 @@
   <a href="#step-1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 1: 변수 선언하고 출력하기
+        Step 1: 이름을 입력받아 인사하기
       
     </span>
   </a>
@@ -622,10 +631,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#step-2-mbti" class="md-nav__link">
+  <a href="#step-2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 2: MBTI 게임용 변수 미리 만들기
+        Step 2: 나이도 함께 입력받기
       
     </span>
   </a>
@@ -638,7 +647,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📝 전체 코드
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
     <span class="md-ellipsis">
       
         ⚠️ 주의할 점
@@ -649,7 +669,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
+  <a href="#_9" class="md-nav__link">
     <span class="md-ellipsis">
       
         ✅ 점검하기
@@ -660,7 +680,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
+  <a href="#_10" class="md-nav__link">
     <span class="md-ellipsis">
       
         🔗 다음 장 미리보기
@@ -674,34 +694,6 @@
   
 </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../chapter03/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    입출력 — MBTI 게임의 첫 화면 만들기
-  
-
-    
-  </span>
-  
-  
-
-      </a>
     </li>
   
 
@@ -722,10 +714,6 @@
   
     
     
-      
-        
-      
-        
       
         
       
@@ -754,7 +742,7 @@
   <span class="md-ellipsis">
     
   
-    Part 2 - 게임에 두뇌를 달자 — 조건문과 반복문
+    Part 2 - 게임 로직 만들기 — 조건문과 반복문
   
 
     
@@ -770,11 +758,39 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Part 2 - 게임에 두뇌를 달자 — 조건문과 반복문
+    Part 2 - 게임 로직 만들기 — 조건문과 반복문
   
 
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    if-else로 갈림길 만들기 — 질문과 선택
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -790,91 +806,7 @@
   <span class="md-ellipsis">
     
   
-    if-else — 선택에 따라 달라지는 반응
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../chapter05/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    switch-case — 깔끔한 다중 선택
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../chapter06/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    for 반복문 — 질문을 여러 개 돌리자
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../chapter07/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    while 반복문과 게임 루프
+    반복문으로 질문 돌리기 — for와 while
   
 
     
@@ -903,8 +835,6 @@
   
     
     
-      
-        
       
         
       
@@ -960,42 +890,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../chapter08/" class="md-nav__link">
+      <a href="../chapter05/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    함수의 기본 — 코드를 상자에 담기
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../chapter09/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    매개변수와 반환값 — 함수끼리 대화하기
+    함수로 기능 분리하기 — 나만의 블록 만들기
   
 
     
@@ -1024,8 +926,6 @@
   
     
     
-      
-        
       
         
       
@@ -1083,14 +983,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../chapter10/" class="md-nav__link">
+      <a href="../chapter06/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    배열 — 질문 목록을 한곳에 저장하기
+    배열 — 질문 목록과 점수를 한곳에 저장하기
   
 
     
@@ -1111,35 +1011,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chapter11/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    문자열 다루기 — MBTI 결과 조합하기
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../chapter12/" class="md-nav__link">
+      <a href="../chapter07/" class="md-nav__link">
         
   
   
@@ -1205,7 +1077,7 @@
   <span class="md-ellipsis">
     
   
-    Part 5 - 한 발짝 더 — 포인터·비트연산자 맛보기와 게임 완성
+    Part 5 - 한 걸음 더 — 포인터·비트연산자 맛보기와 게임 완성
   
 
     
@@ -1221,7 +1093,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Part 5 - 한 발짝 더 — 포인터·비트연산자 맛보기와 게임 완성
+    Part 5 - 한 걸음 더 — 포인터·비트연산자 맛보기와 게임 완성
   
 
           </label>
@@ -1234,14 +1106,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../chapter13/" class="md-nav__link">
+      <a href="../chapter08/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    포인터 맛보기 — 주소의 세계 엿보기
+    포인터 맛보기 — 주소라는 개념 이해하기
   
 
     
@@ -1262,14 +1134,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../chapter14/" class="md-nav__link">
+      <a href="../chapter09/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    비트연산자 맛보기 — 0과 1로 말하는 컴퓨터
+    비트연산자 맛보기 — 0과 1의 세계 엿보기
   
 
     
@@ -1290,14 +1162,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../chapter15/" class="md-nav__link">
+      <a href="../chapter10/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    MBTI 게임 최종 완성 — 모든 것을 하나로!
+    MBTI 게임 최종 완성 — 전체 코드 통합과 회고
   
 
     
@@ -1368,10 +1240,21 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#type" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       
-        개념: 자료형(Type) — 택배 상자의 라벨
+        개념: 변수 선언과 자료형
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        개념: 형식 지정자
       
     </span>
   </a>
@@ -1384,7 +1267,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#_6" class="md-nav__link">
     <span class="md-ellipsis">
       
         🔨 따라하기
@@ -1399,7 +1282,7 @@
   <a href="#step-1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 1: 변수 선언하고 출력하기
+        Step 1: 이름을 입력받아 인사하기
       
     </span>
   </a>
@@ -1407,10 +1290,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#step-2-mbti" class="md-nav__link">
+  <a href="#step-2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 2: MBTI 게임용 변수 미리 만들기
+        Step 2: 나이도 함께 입력받기
       
     </span>
   </a>
@@ -1423,7 +1306,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📝 전체 코드
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
     <span class="md-ellipsis">
       
         ⚠️ 주의할 점
@@ -1434,7 +1328,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
+  <a href="#_9" class="md-nav__link">
     <span class="md-ellipsis">
       
         ✅ 점검하기
@@ -1445,7 +1339,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
+  <a href="#_10" class="md-nav__link">
     <span class="md-ellipsis">
       
         🔗 다음 장 미리보기
@@ -1472,92 +1366,149 @@
 
 
 
-<h1 id="_1">변수와 자료형 — 이름표를 붙이자<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<h1 id="_1">변수와 자료형 — 플레이어 이름 입력받기<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <h2 id="_2">🎯 이 장에서 배우는 것<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> C언어에서 변수를 선언할 때 자료형이 필요한 이유를 설명할 수 있다</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> int, float, char를 사용해 변수를 선언하고 값을 출력할 수 있다</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> C언어에서 변수를 선언하고 값을 대입할 수 있다</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <code>scanf</code>를 사용해 사용자 입력을 받을 수 있다</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 형식 지정자(<code>%d</code>, <code>%s</code>)의 역할을 설명할 수 있다</li>
 </ul>
 <hr />
 <h2 id="_3">📚 핵심 개념<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<h3 id="type">개념: 자료형(Type) — 택배 상자의 라벨<a class="headerlink" href="#type" title="Permanent link">&para;</a></h3>
-<p>파이썬에서는 <code>x = 10</code>이면 끝이죠. 알아서 "아, 정수구나" 판단해 줍니다.</p>
-<p>C는 다릅니다. <strong>택배 상자에 라벨을 먼저 붙여야</strong> 합니다 📦</p>
+<h3 id="_4">개념: 변수 선언과 자료형<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>파이썬에서는 <code>name = "홍길동"</code> 한 줄이면 끝이었죠? C언어는 다릅니다. <strong>택배 상자에 라벨을 먼저 붙이는 것</strong>과 같아요. 📦</p>
 <blockquote>
-<p>"이 상자에는 <strong>정수</strong>만 넣을 거야" → <code>int x = 10;</code></p>
+<p>"이 상자에는 <strong>정수</strong>만 넣을 거야" → <code>int age;</code>
+"이 상자에는 <strong>글자들</strong>을 넣을 거야" → <code>char name[20];</code></p>
 </blockquote>
-<p>이걸 <strong>정적 타이핑</strong>이라고 해요. 왜 이렇게 할까요? C는 메모리를 직접 관리하기 때문에, <strong>얼마만큼의 공간을 확보할지</strong> 미리 알아야 하거든요.</p>
-<div class="mermaid">graph LR
-    A["파이썬 🐍&lt;br&gt;x = 10&lt;br&gt;(알아서 판단)"] --- VS["VS"]
-    VS --- B["C언어 ⚙️&lt;br&gt;int x = 10;&lt;br&gt;(미리 선언)"]
-    style A fill:#306998,color:#fff
-    style B fill:#555,color:#fff
-    style VS fill:#f90,color:#fff</div>
-<p><strong>자주 쓰는 3가지 자료형:</strong></p>
+<p>이것이 바로 <strong>변수 선언</strong>입니다. C언어는 데이터의 종류(자료형)를 미리 알려줘야 합니다.</p>
+<p><strong>자주 쓰는 자료형 3가지:</strong></p>
 <ul>
-<li><strong>int</strong> — 정수 (4바이트) → <code>%d</code>로 출력</li>
-<li><strong>float</strong> — 소수점 있는 수 (4바이트) → <code>%f</code>로 출력</li>
-<li><strong>char</strong> — 문자 하나 (1바이트) → <code>%c</code>로 출력</li>
+<li><strong><code>int</code></strong> — 정수 (나이, 점수 등) → <code>int score;</code></li>
+<li><strong><code>float</code></strong> — 소수점 숫자 (키, 몸무게 등) → <code>float height;</code></li>
+<li><strong><code>char[크기]</code></strong> — 문자열 (이름 등) → <code>char name[20];</code></li>
 </ul>
+<div class="mermaid">flowchart LR
+    A["파이썬\nx = 10"] --&gt;|"자동으로 정수 판단"| B["바로 사용 🎉"]
+    C["C언어\nint x = 10;"] --&gt;|"내가 직접 정수라고 선언"| D["바로 사용 🎉"]
+    style A fill:#306998,color:#fff
+    style C fill:#555,color:#fff</div>
+<h3 id="_5">개념: 형식 지정자<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p><code>printf</code>와 <code>scanf</code>에서 변수를 다룰 때, <strong>"이 자리에 어떤 종류의 데이터가 올 거야"</strong> 라고 알려주는 기호입니다.</p>
+<ul>
+<li><strong><code>%d</code></strong> → 정수 (decimal)</li>
+<li><strong><code>%s</code></strong> → 문자열 (string)</li>
+<li><strong><code>%f</code></strong> → 소수점 숫자 (float)</li>
+</ul>
+<p>파이썬의 f-string에서 <code>f"나이: {age}"</code>라고 쓰던 것을, C에서는 <code>printf("나이: %d", age);</code>로 쓰는 거예요!</p>
 <hr />
-<h2 id="_4">🔨 따라하기<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
-<h3 id="step-1">Step 1: 변수 선언하고 출력하기<a class="headerlink" href="#step-1" title="Permanent link">&para;</a></h3>
+<h2 id="_6">🔨 따라하기<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<h3 id="step-1">Step 1: 이름을 입력받아 인사하기<a class="headerlink" href="#step-1" title="Permanent link">&para;</a></h3>
 <div class="language-c highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">score</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">85</span><span class="p">;</span><span class="w">          </span><span class="c1">// 정수형 변수</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">height</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">172.5</span><span class="p">;</span><span class="w">    </span><span class="c1">// 실수형 변수</span>
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="n">grade</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sc">&#39;A&#39;</span><span class="p">;</span><span class="w">        </span><span class="c1">// 문자형 변수 (작은따옴표!)</span>
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;점수: %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">score</span><span class="p">);</span>
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;키: %.1f</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">height</span><span class="p">);</span>
-</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;등급: %c</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">grade</span><span class="p">);</span>
-</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>
-</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="p">}</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="n">name</span><span class="p">[</span><span class="mi">20</span><span class="p">];</span><span class="w">  </span><span class="c1">// 글자를 담을 상자 (최대 19글자)</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;플레이어 이름을 입력하세요: &quot;</span><span class="p">);</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">    </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%s&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">);</span><span class="w">  </span><span class="c1">// 입력받기 (name 앞에 &amp;가 없음 주의!)</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%s님, 환영합니다!</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">);</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="p">}</span>
 </span></code></pre></div>
 <p><strong>실행 결과:</strong>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>점수: 85
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>키: 172.5
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>등급: A
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>플레이어 이름을 입력하세요: Luna
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>Luna님, 환영합니다!
 </span></code></pre></div></p>
-<h3 id="step-2-mbti">Step 2: MBTI 게임용 변수 미리 만들기<a class="headerlink" href="#step-2-mbti" title="Permanent link">&para;</a></h3>
+<h3 id="step-2">Step 2: 나이도 함께 입력받기<a class="headerlink" href="#step-2" title="Permanent link">&para;</a></h3>
 <div class="language-c highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
 </span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="n">initial</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sc">&#39;J&#39;</span><span class="p">;</span><span class="w">      </span><span class="c1">// 플레이어 이니셜</span>
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">mbti_score</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w">       </span><span class="c1">// MBTI 점수 (나중에 누적!)</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="n">name</span><span class="p">[</span><span class="mi">20</span><span class="p">];</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">age</span><span class="p">;</span><span class="w">  </span><span class="c1">// 정수를 담을 상자</span>
 </span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
-</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;플레이어: %c</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">initial</span><span class="p">);</span>
-</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;현재 점수: %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">mbti_score</span><span class="p">);</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;이름을 입력하세요: &quot;</span><span class="p">);</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">    </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%s&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">);</span>
 </span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>
-</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="p">}</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;나이를 입력하세요: &quot;</span><span class="p">);</span>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">    </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">age</span><span class="p">);</span><span class="w">  </span><span class="c1">// 정수는 &amp;를 붙인다!</span>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%s님(%d세), MBTI 테스트를 시작합니다!</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">age</span><span class="p">);</span>
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="p">}</span>
 </span></code></pre></div>
 <p><strong>실행 결과:</strong>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>플레이어: J
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>현재 점수: 0
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>이름을 입력하세요: Luna
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>나이를 입력하세요: 25
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>Luna님(25세), MBTI 테스트를 시작합니다!
 </span></code></pre></div></p>
 <hr />
-<h2 id="_5">⚠️ 주의할 점<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<h2 id="_7">📝 전체 코드<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">    </span><span class="c1">// 변수 선언 — 상자에 라벨 붙이기</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="n">name</span><span class="p">[</span><span class="mi">20</span><span class="p">];</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">age</span><span class="p">;</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">    </span><span class="c1">// 입력받기</span>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;플레이어 이름을 입력하세요: &quot;</span><span class="p">);</span>
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="w">    </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%s&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">);</span>
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>
+</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;나이를 입력하세요: &quot;</span><span class="p">);</span>
+</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="w">    </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">age</span><span class="p">);</span>
+</span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>
+</span><span id="__span-4-15"><a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="w">    </span><span class="c1">// 출력하기</span>
+</span><span id="__span-4-16"><a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%s님(%d세), MBTI 테스트를 시작합니다!</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">age</span><span class="p">);</span>
+</span><span id="__span-4-17"><a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a>
+</span><span id="__span-4-18"><a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-4-19"><a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a><span class="p">}</span>
+</span></code></pre></div>
+<hr />
+<h2 id="_8">⚠️ 주의할 점<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
 <ol>
-<li><strong>char는 작은따옴표!</strong> <code>'A'</code>는 문자, <code>"A"</code>는 문자열 — 전혀 다릅니다</li>
-<li><strong>서식 지정자를 틀리면 엉뚱한 값이 나와요.</strong> int에 <code>%f</code>를 쓰면 이상한 숫자가 출력됩니다</li>
+<li><strong><code>scanf</code>에서 <code>&amp;</code> 붙이기 규칙</strong> 🔥</li>
+<li><code>int</code>, <code>float</code> → <strong><code>&amp;</code>를 붙인다</strong> → <code>scanf("%d", &amp;age);</code></li>
+<li><code>char 배열(문자열)</code> → <strong><code>&amp;</code>를 붙이지 않는다</strong> → <code>scanf("%s", name);</code></li>
+<li>
+<p>이유는 뒤에서 배우지만, 지금은 <strong>"문자열만 예외"</strong> 라고 기억하세요!</p>
+</li>
+<li>
+<p><strong><code>scanf("%s", ...)</code>는 공백 전까지만 읽습니다</strong></p>
+</li>
+<li>"Hong Gildong" 입력 시 → <code>name</code>에는 "Hong"만 저장됩니다</li>
 </ol>
 <hr />
-<h2 id="_6">✅ 점검하기<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
-<p><strong>1. 파이썬과 달리 C에서 변수 선언 시 자료형을 적어야 하는 이유는?</strong></p>
-<details><summary>정답 확인</summary>C는 메모리 공간을 미리 확보해야 하므로, 어떤 종류의 데이터가 들어갈지 알려줘야 합니다 (정적 타이핑).</details>
+<h2 id="_9">✅ 점검하기<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<p><strong>1. 다음 빈칸을 채우세요:</strong> 정수형 변수 <code>score</code>를 선언하고 0으로 초기화하려면?</p>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">______</span><span class="w"> </span><span class="n">score</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span></code></pre></div>
+<details><summary>정답 확인</summary>
 
-<p><strong>2. <code>float temp = 36.5;</code>를 printf로 출력할 때 알맞은 서식 지정자는?</strong></p>
-<details><summary>정답 확인</summary>%f 입니다. 예: printf("%f", temp);</details>
+`int score = 0;`
 
-<p><strong>3. <code>char ch = "B";</code>는 왜 틀렸을까요?</strong></p>
-<details><summary>정답 확인</summary>char는 작은따옴표를 써야 합니다. 올바른 코드: char ch = 'B';</details>
+</details>
+
+<p><strong>2.</strong> <code>scanf</code>로 정수를 입력받을 때 변수 앞에 붙이는 기호는?</p>
+<details><summary>정답 확인</summary>
+
+`&` (앰퍼샌드) — 예: `scanf("%d", &age);`
+단, 문자열(char 배열)에는 붙이지 않습니다.
+
+</details>
+
+<p><strong>3.</strong> <code>printf("점수: %d점\n", score);</code>에서 <code>%d</code>의 역할은?</p>
+<details><summary>정답 확인</summary>
+
+형식 지정자로, **"이 자리에 정수 값이 들어갈 거야"** 라고 알려주는 역할입니다. 실행 시 `score` 변수의 값으로 대체됩니다.
+
+</details>
 
 <hr />
-<h2 id="_7">🔗 다음 장 미리보기<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
-<p>변수에 값을 넣었으니, 다음엔 <strong>사용자로부터 값을 입력받는 방법</strong>(<code>scanf</code>)을 배웁니다. MBTI 게임에서 플레이어가 직접 답을 고르려면 입력이 필수겠죠? 🎮</p>
+<h2 id="_10">🔗 다음 장 미리보기<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
+<p>이름을 입력받았으니, 이제 <strong>질문에 따라 다른 결과를 보여주는 분기 처리</strong>가 필요하겠죠? 다음 장에서는 <code>if-else</code>를 배워서 MBTI 질문에 대한 응답을 처리하는 방법을 알아봅니다! 🎮</p>
 
 
 
