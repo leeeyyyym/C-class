@@ -58,7 +58,23 @@
     <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
+<style>
+  /* ── Mermaid 초기화 ── */
+  .mermaid { background: transparent !important; }
 
+  /* ── 코드 신택스 컬러 (chapter07과 동일한 MkDocs Material 토큰) ── */
+  .md-typeset pre code .kt  { color: #f78c6c; }   /* 자료형 int, char, void */
+  .md-typeset pre code .nf  { color: #82aaff; }   /* 함수 이름 */
+  .md-typeset pre code .cp  { color: #c792ea; }   /* #include */
+  .md-typeset pre code .c1  { color: #546e7a; font-style: italic; } /* 주석 */
+  .md-typeset pre code .s   { color: #c3e88d; }   /* 문자열 리터럴 */
+  .md-typeset pre code .sc  { color: #c3e88d; }   /* 문자 리터럴 'I' */
+  .md-typeset pre code .mi  { color: #f78c6c; }   /* 숫자 */
+  .md-typeset pre code .k   { color: #c792ea; }   /* if, else, return */
+  .md-typeset pre code .o   { color: #89ddff; }   /* 연산자 */
+  .md-typeset pre code .p   { color: #89ddff; }   /* 괄호, 세미콜론 */
+  .md-typeset pre code .w   { color: inherit; }
+</style>
     
     
   </head>
