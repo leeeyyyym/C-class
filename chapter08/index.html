@@ -1239,212 +1239,140 @@
           
             <div class="md-content" data-md-component="content">
               
-              <article class="md-content__inner md-typeset">
-                
-                  
+             <article class="md-content__inner md-typeset">
+  <h1 id="2">함수 (2) — 함수 선언과 지역변수 이해하기<a class="headerlink" href="#2" title="Permanent link">&para;</a></h1>
+  
+  <h2 id="_1">🎯 이 장에서 배우는 것<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+  <ul class="task-list">
+    <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 함수를 <code>main</code> 앞에 선언(프로토타입)하는 방법을 설명할 수 있다</li>
+    <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 지역변수의 개념과 유효 범위(스코프)를 이해할 수 있다</li>
+    <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 함수끼리 같은 변수명을 써도 충돌하지 않는 이유를 설명할 수 있다</li>
+  </ul>
+  
+  <hr />
 
+  <h2 id="_2">📚 핵심 개념<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+  <h3 id="1">개념 1: 함수 선언 (프로토타입)<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
+  <p><strong>왜 필요한가요?</strong> 🤔 C 언어는 코드를 <strong>위에서 아래로</strong> 읽습니다. 그래서 <code>main</code>보다 아래에 함수를 정의하면 컴파일러가 인식하지 못해 오류를 냅니다.</p>
+  
+  <table>
+    <thead><tr><th>방법</th><th>설명</th><th>예시</th></tr></thead>
+    <tbody>
+      <tr><td>① 함수를 <code>main</code> <strong>앞에</strong> 정의</td><td>짧은 함수일 때 편리</td><td>앞 챕터 방식</td></tr>
+      <tr><td>② <strong>프로토타입</strong> 선언 후 정의</td><td>실무에서 권장</td><td>이번 챕터 방식 ✅</td></tr>
+    </tbody>
+  </table>
 
+  <p><strong>프로토타입이란?</strong> — "이런 함수가 나중에 나올 거야!"라고 미리 알려주는 <strong>예고편</strong>입니다.</p>
 
-<h1 id="2">함수 (2) — 함수 선언과 지역변수 이해하기<a class="headerlink" href="#2" title="Permanent link">&para;</a></h1>
-<h2 id="_1">🎯 이 장에서 배우는 것<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 함수를 <code>main</code> 앞에 선언(프로토타입)하는 방법을 설명할 수 있다</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 지역변수의 개념과 유효 범위(스코프)를 이해할 수 있다</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 함수끼리 같은 변수명을 써도 충돌하지 않는 이유를 설명할 수 있다</li>
-</ul>
-<hr />
-<h2 id="_2">📚 핵심 개념<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<h3 id="1">개념 1: 함수 선언 (프로토타입)<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
-<p><strong>왜 필요한가요?</strong> 🤔</p>
-<p>C 언어는 코드를 <strong>위에서 아래로</strong> 읽습니다. 그래서 <code>main</code>보다 아래에 함수를 정의하면, 컴파일러가 "이 함수가 뭔지 모르겠는데?" 하고 오류를 냅니다.</p>
-<p>해결책은 두 가지예요.</p>
-<table>
-<thead>
-<tr>
-<th>방법</th>
-<th>설명</th>
-<th>예시</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>① 함수를 <code>main</code> <strong>앞에</strong> 정의</td>
-<td>짧은 함수일 때 편리</td>
-<td>앞 챕터 방식</td>
-</tr>
-<tr>
-<td>② <strong>프로토타입</strong> 선언 후, 정의는 아래에</td>
-<td>실무에서 권장</td>
-<td>이번 챕터 방식 ✅</td>
-</tr>
-</tbody>
-</table>
-<p><strong>프로토타입이란?</strong> — "이런 함수가 나중에 나올 거야!"라고 미리 컴파일러에게 알려주는 <strong>예고편</strong>입니다.</p>
-<p>```c
-// 프로토타입 (세미콜론으로 끝납니다!)
-int add(int a, int b);</p>
-<p>int main(void) {
+<pre><code class="language-c">// 프로토타입 (세미콜론으로 끝납니다!)
+int add(int a, int b);
+
+int main(void) {
     int result = add(3, 5);   // 컴파일러가 add를 알고 있어서 OK ✅
     printf("%d\n", result);
     return 0;
-}</p>
-<p>// 실제 정의는 main 아래에
+}
+
+// 실제 정의는 main 아래에
 int add(int a, int b) {
     return a + b;
-}
-flowchart TD
-    A["프로토타입 선언\nint add(int a, int b);"] --&gt;|"예고편 등록"| B["컴파일러 📖\n'add 함수가 있구나!'"]
-    C["main 함수\nadd(3, 5) 호출"] --&gt;|"알고 있으니 OK"| B
-    B --&gt; D["실제 정의\n(파일 아래쪽)"]
-개념 2: 지역변수와 유효 범위 (스코프)
-비유로 시작 🏠</p>
-<p>각 함수는 자신만의 독립된 방입니다. 방 안에서 선언한 변수(지역변수)는 그 방 안에서만 존재해요. 다른 방에서는 보이지 않습니다.</p>
-<p>flowchart LR
-    subgraph main_room["🏠 main 방"]
-        MV["int score = 90"]
-    end
-    subgraph add_room["🏠 add 방"]
-        AV["int score = 0\n(전혀 다른 변수!)"]
-    end
-    main_room -.-&gt;|"서로 안 보임 🚫"| add_room
-void showScore(void) {
-    int score = 100;       // add 방의 score
+}</code></pre>
+
+  <div class="mermaid">
+    flowchart TD
+        A["프로토타입 선언\nint add(int a, int b);"] --&gt;|"예고편 등록"| B["컴파일러 📖\n'add 함수가 있구나!'"]
+        C["main 함수\nadd(3, 5) 호출"] --&gt;|"알고 있으니 OK"| B
+        B --&gt; D["실제 정의\n(파일 아래쪽)"]
+  </div>
+
+  <h3 id="scope">개념 2: 지역변수와 유효 범위 (스코프)<a class="headerlink" href="#scope" title="Permanent link">&para;</a></h3>
+  <p><strong>비유로 시작 🏠</strong> 각 함수는 자신만의 독립된 방입니다. 방 안에서 선언한 변수(지역변수)는 그 방 안에서만 존재하며, 다른 방에서는 보이지 않습니다.</p>
+
+  <div class="mermaid">
+    flowchart LR
+        subgraph main_room["🏠 main 방"]
+            MV["int score = 90"]
+        end
+        subgraph add_room["🏠 add 방"]
+            AV["int score = 0\n(전혀 다른 변수!)"]
+        end
+        main_room -.-&gt;|"서로 안 보임 🚫"| add_room
+  </div>
+
+<pre><code class="language-c">void showScore(void) {
+    int score = 100;       // showScore 방의 score
     printf("%d\n", score);
-}</p>
-<p>int main(void) {
+}
+
+int main(void) {
     int score = 90;        // main 방의 score
     showScore();
     printf("%d\n", score); // 90 출력 — main의 score는 그대로!
     return 0;
-}
-💡 핵심: 함수가 끝나면 그 안의 지역변수는 사라집니다. 함수가 호출될 때마다 새로 만들어져요.</p>
-<p>🔨 따라하기
-Step 1: 프로토타입 없이 써보기 (오류 체험)</p>
-<h1 id="include">include <stdio.h><a class="headerlink" href="#include" title="Permanent link">&para;</a></h1>
-<p>int main(void) {
-    // ❌ greet()가 아직 선언되지 않아서 경고 또는 오류!
-    greet();
-    return 0;
-}</p>
-<p>void greet(void) {
-    printf("안녕하세요!\n");
-}
-결과: 컴파일러가 greet를 모른다고 불평합니다. 🚨</p>
-<p>Step 2: 프로토타입으로 해결하기</p>
-<h1 id="include_1">include <stdio.h><a class="headerlink" href="#include_1" title="Permanent link">&para;</a></h1>
-<p>// ✅ 프로토타입 선언 — "greet 함수가 나중에 나올 거야!"
-void greet(void);</p>
-<p>int main(void) {
-    greet();    // 이제 OK!
-    return 0;
-}</p>
-<p>// 실제 정의는 main 아래에
-void greet(void) {
-    printf("안녕하세요!\n");
-}
-실행 결과:</p>
-<p>안녕하세요!
-Step 3: 지역변수 범위 확인하기</p>
-<h1 id="include_2">include <stdio.h><a class="headerlink" href="#include_2" title="Permanent link">&para;</a></h1>
-<p>// 프로토타입
-void printLocal(void);</p>
-<p>int main(void) {
-    int x = 10;          // main의 지역변수</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">printLocal</span><span class="o">();</span><span class="w">        </span><span class="o">//</span><span class="w"> </span><span class="nt">함수</span><span class="w"> </span><span class="nt">호출</span>
+}</code></pre>
+  <p>💡 <strong>핵심:</strong> 함수가 끝나면 그 안의 지역변수는 사라집니다. 함수가 호출될 때마다 새로 만들어집니다.</p>
 
-<span class="nt">printf</span><span class="o">(</span><span class="s2">&quot;main의 x: %d\n&quot;</span><span class="o">,</span><span class="w"> </span><span class="nt">x</span><span class="o">);</span><span class="w">  </span><span class="o">//</span><span class="w"> </span><span class="nt">main의</span><span class="w"> </span><span class="nt">x는</span><span class="w"> </span><span class="nt">그대로</span><span class="w"> </span><span class="nt">10</span>
-<span class="nt">return</span><span class="w"> </span><span class="nt">0</span><span class="o">;</span>
-</code></pre></div>
+  <hr />
 
-<p>}</p>
-<p>void printLocal(void) {
-    int x = 999;         // printLocal의 지역변수 (main의 x와 다른 변수!)
-    printf("printLocal의 x: %d\n", x);
+  <h2 id="follow">🔨 따라하기<a class="headerlink" href="#follow" title="Permanent link">&para;</a></h2>
+  <h4>Step 1: 오류 체험</h4>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+int main(void) {
+    greet(); // ❌ greet()가 아직 선언되지 않음!
+    return 0;
 }
-// 이 함수가 끝나면 x = 999는 사라짐 💨
-실행 결과:</p>
-<p>printLocal의 x: 999
-main의 x: 10
-같은 이름 x를 썼지만 서로 다른 방의 변수라 충돌이 없어요! ✅</p>
-<p>📝 전체 코드 — 미니 계산기
-프로토타입과 지역변수를 모두 활용한 예제입니다.</p>
-<h1 id="include_3">include <stdio.h><a class="headerlink" href="#include_3" title="Permanent link">&para;</a></h1>
-<p>/<em> ---- 프로토타입 선언 ---- </em>/
+void greet(void) { printf("안녕하세요!\n"); }</code></pre>
+
+  <h4>Step 2: 프로토타입으로 해결</h4>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+void greet(void); // ✅ 프로토타입 선언
+
+int main(void) {
+    greet(); // 이제 작동!
+    return 0;
+}
+void greet(void) { printf("안녕하세요!\n"); }</code></pre>
+
+  <h2 id="total">📝 전체 코드 — 미니 계산기<a class="headerlink" href="#total" title="Permanent link">&para;</a></h2>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+
+/* ---- 프로토타입 선언 ---- */
 int add(int a, int b);
 int subtract(int a, int b);
-void printResult(int result);</p>
-<p>/<em> ---- main 함수 ---- </em>/
+void printResult(int result);
+
 int main(void) {
-    int x = 20, y = 8;</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">int</span><span class="w"> </span><span class="nt">sum</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="nt">add</span><span class="o">(</span><span class="nt">x</span><span class="o">,</span><span class="w"> </span><span class="nt">y</span><span class="o">);</span><span class="w">       </span><span class="o">//</span><span class="w"> </span><span class="nt">덧셈</span>
-<span class="nt">int</span><span class="w"> </span><span class="nt">diff</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nt">subtract</span><span class="o">(</span><span class="nt">x</span><span class="o">,</span><span class="w"> </span><span class="nt">y</span><span class="o">);</span><span class="w">  </span><span class="o">//</span><span class="w"> </span><span class="nt">뺄셈</span>
+    int x = 20, y = 8;
+    int sum  = add(x, y);
+    int diff = subtract(x, y);
 
-<span class="nt">printf</span><span class="o">(</span><span class="s2">&quot;덧셈 결과: &quot;</span><span class="o">);</span>
-<span class="nt">printResult</span><span class="o">(</span><span class="nt">sum</span><span class="o">);</span>
+    printf("덧셈 결과: ");
+    printResult(sum);
+    printf("뺄셈 결과: ");
+    printResult(diff);
 
-<span class="nt">printf</span><span class="o">(</span><span class="s2">&quot;뺄셈 결과: &quot;</span><span class="o">);</span>
-<span class="nt">printResult</span><span class="o">(</span><span class="nt">diff</span><span class="o">);</span>
-
-<span class="nt">return</span><span class="w"> </span><span class="nt">0</span><span class="o">;</span>
-</code></pre></div>
-
-<p>}</p>
-<p>/<em> ---- 함수 정의 (main 아래) ---- </em>/
-int add(int a, int b) {
-    int result = a + b;   // 이 result는 add의 지역변수
-    return result;
-}                         // 함수 끝 → result 사라짐 💨</p>
-<p>int subtract(int a, int b) {
-    int result = a - b;   // 이 result는 subtract의 지역변수
-    return result;
-}                         // 함수 끝 → result 사라짐 💨</p>
-<p>void printResult(int result) {
-    printf("%d\n", result);
+    return 0;
 }
-실행 결과:</p>
-<p>덧셈 결과: 28
-뺄셈 결과: 12
-💡 add, subtract, printResult 모두 result라는 변수명을 써도 각자의 방에 있으므로 충돌 없음! 🎉</p>
-<p>⚠️ 주의할 점
-실수  이유  해결
-프로토타입에 ; 빠뜨리기   int add(int a, int b) 는 함수 정의로 오해됨  끝에 반드시 ; 붙이기
-지역변수를 다른 함수에서 쓰려 함  다른 방의 변수는 보이지 않음    매개변수나 반환값으로 전달
-프로토타입과 정의의 시그니처 불일치 컴파일 오류 발생   자료형·매개변수 개수 맞추기
-✅ 점검하기
-1. 프로토타입 선언이 필요한 이유는 무엇인가요?</p>
-<details><summary>정답 확인</summary> C 언어는 코드를 위에서 아래로 읽기 때문에, main보다 뒤에 정의된 함수를 미리 컴파일러에게 알려줘야 호출할 수 있습니다. </details>
-<ol>
-<li>아래 코드의 실행 결과는 무엇인가요?</li>
-</ol>
-<p>void test(void) { int n = 50; printf("%d\n", n); }
-int main(void) { int n = 10; test(); printf("%d\n", n); return 0; }</p>
-<details><summary>정답 확인</summary>
-50
-10
-test의 n과 main의 n은 서로 다른 지역변수입니다.
 
-</details>
-<ol>
-<li>함수가 끝난 뒤 그 안의 지역변수는 어떻게 되나요?</li>
-</ol>
-<details><summary>정답 확인</summary> 함수 실행이 끝나면 지역변수는 메모리에서 사라집니다. 다음에 함수가 다시 호출되면 새로 만들어집니다. </details>
-<p>🔗 다음 장 미리보기
-다음 장에서는 배열 (1) — 같은 자료형 묶어서 관리하기를 배웁니다.
-점수 10개를 변수 10개로 관리하는 번거로움을 한 번에 해결해볼게요! 📦</p>
+int add(int a, int b) { return a + b; }
+int subtract(int a, int b) { return a - b; }
+void printResult(int result) { printf("%d\n", result); }</code></pre>
 
+  <h2 id="check">✅ 점검하기<a class="headerlink" href="#check" title="Permanent link">&para;</a></h2>
+  <ol>
+    <li>프로토타입 선언이 필요한 이유는 무엇인가요?
+      <details><summary>정답 확인</summary>C 언어는 위에서 아래로 읽기 때문에, 뒤에 나오는 함수를 미리 알려줘야 호출할 수 있습니다.</details>
+    </li>
+    <li>함수가 끝난 뒤 그 안의 지역변수는 어떻게 되나요?
+      <details><summary>정답 확인</summary>메모리에서 사라지며, 다음 호출 때 새로 만들어집니다.</details>
+    </li>
+  </ol>
 
-
-
-
-
-
-
-
-
-
-
-                
-              </article>
+  <hr />
+  <p>🔗 <strong>다음 장 미리보기</strong><br>
+  다음 장에서는 <strong>배열 (1) — 질문 목록과 점수를 한 곳에 모으기</strong>를 배웁니다! 📦</p>
+</article>
             </div>
           
           
