@@ -6,13 +6,17 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="파이썬 경험이 있는 고등학생을 대상으로, MBTI 성격유형 테스트 게임을 만들면서 C언어의 핵심 개념을 7차시에 걸쳐 익히는 프로젝트 기반 강의 교재입니다.">
+        <meta name="description" content="MBTI 성격유형 테스트 게임을 매 차시마다 조금씩 완성해 나가면서 C언어의 핵심 문법을 익히는 7차시 프로젝트 기반 교재입니다. 파이썬 경험을 발판 삼아 C언어의 본질을 자연스럽게 이해할 수 있도록 구성하였습니다.">
       
       
         <meta name="author" content="Created with EduFlow">
       
       
       
+        <link rel="prev" href="../chapter12/">
+      
+      
+        <link rel="next" href="../chapter14/">
       
       
         
@@ -23,7 +27,7 @@
     
     
       
-        <title>포인터 맛보기 — 주소의 세계 엿보기 - C언어 기초 with MBTI 게임(Ver2)</title>
+        <title>포인터 맛보기 — &와 *의 정체를 밝혀라 - C언어 기초 with MBTI 게임</title>
       
     
     
@@ -90,7 +94,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="상단/헤더">
-    <a href=".." title="C언어 기초 with MBTI 게임(Ver2)" class="md-header__button md-logo" aria-label="C언어 기초 with MBTI 게임(Ver2)" data-md-component="logo">
+    <a href=".." title="C언어 기초 with MBTI 게임" class="md-header__button md-logo" aria-label="C언어 기초 with MBTI 게임" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -104,13 +108,13 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            C언어 기초 with MBTI 게임(Ver2)
+            C언어 기초 with MBTI 게임
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              포인터 맛보기 — 주소의 세계 엿보기
+              포인터 맛보기 — &와 *의 정체를 밝혀라
             
           </span>
         </div>
@@ -238,7 +242,7 @@
   
     
   
-  Part 1 - C언어와의 첫 만남 — 게임의 시작
+  Part 1 - C언어와의 첫 만남
 
         </a>
       </li>
@@ -254,13 +258,13 @@
     
     
       <li class="md-tabs__item">
-        <a href="../chapter03/" class="md-tabs__link">
+        <a href="../chapter04/" class="md-tabs__link">
           
   
   
     
   
-  Part 2 - 게임 로직 만들기 — 조건문과 반복문
+  Part 2 - 게임에 두뇌를 달자 — 조건문과 반복문
 
         </a>
       </li>
@@ -276,13 +280,13 @@
     
     
       <li class="md-tabs__item">
-        <a href="../chapter05/" class="md-tabs__link">
+        <a href="../chapter07/" class="md-tabs__link">
           
   
   
     
   
-  Part 3 - 코드를 정리하자 — 함수
+  Part 3 - 게임을 체계적으로 — 함수와 배열
 
         </a>
       </li>
@@ -294,39 +298,19 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../chapter06/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../chapter11/" class="md-tabs__link">
           
   
   
     
   
-  Part 4 - 데이터를 묶어서 관리하자 — 배열과 구조체
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../chapter08/" class="md-tabs__link">
-          
-  
-  
-    
-  
-  Part 5 - 한 걸음 더 — 포인터·비트연산자 맛보기와 게임 완성
+  Part 4 - 한 단계 더 — 구조체와 C언어의 깊은 세계 맛보기
 
         </a>
       </li>
@@ -356,13 +340,13 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="네비게이션" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="C언어 기초 with MBTI 게임(Ver2)" class="md-nav__button md-logo" aria-label="C언어 기초 with MBTI 게임(Ver2)" data-md-component="logo">
+    <a href=".." title="C언어 기초 with MBTI 게임" class="md-nav__button md-logo" aria-label="C언어 기초 with MBTI 게임" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
 
     </a>
-    C언어 기초 with MBTI 게임(Ver2)
+    C언어 기초 with MBTI 게임
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -407,6 +391,8 @@
       
         
       
+        
+      
     
     
     
@@ -430,7 +416,7 @@
   <span class="md-ellipsis">
     
   
-    Part 1 - C언어와의 첫 만남 — 게임의 시작
+    Part 1 - C언어와의 첫 만남
   
 
     
@@ -446,7 +432,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Part 1 - C언어와의 첫 만남 — 게임의 시작
+    Part 1 - C언어와의 첫 만남
   
 
           </label>
@@ -466,7 +452,7 @@
   <span class="md-ellipsis">
     
   
-    Hello, C! — 개발 환경 준비와 첫 프로그램
+    Hello, C! — 파이썬에서 C언어로 건너가기
   
 
     
@@ -494,7 +480,35 @@
   <span class="md-ellipsis">
     
   
-    변수와 자료형 — 플레이어 이름 입력받기
+    변수와 자료형 — 데이터를 담는 그릇의 크기가 정해져 있다고?
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    입출력 마스터 — 플레이어 이름을 입력받자
   
 
     
@@ -523,6 +537,8 @@
   
     
     
+      
+        
       
         
       
@@ -551,7 +567,7 @@
   <span class="md-ellipsis">
     
   
-    Part 2 - 게임 로직 만들기 — 조건문과 반복문
+    Part 2 - 게임에 두뇌를 달자 — 조건문과 반복문
   
 
     
@@ -567,7 +583,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Part 2 - 게임 로직 만들기 — 조건문과 반복문
+    Part 2 - 게임에 두뇌를 달자 — 조건문과 반복문
   
 
           </label>
@@ -580,14 +596,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../chapter03/" class="md-nav__link">
+      <a href="../chapter04/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    if-else로 갈림길 만들기 — 질문과 선택
+    조건문 — 네 선택에 따라 결과가 달라진다
   
 
     
@@ -608,14 +624,42 @@
   
   
     <li class="md-nav__item">
-      <a href="../chapter04/" class="md-nav__link">
+      <a href="../chapter05/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    반복문으로 질문 돌리기 — for와 while
+    반복문 (1) — 같은 질문 패턴을 반복하자
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter06/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    반복문 (2) — 잘못된 입력은 다시 받자
   
 
     
@@ -644,6 +688,12 @@
   
     
     
+      
+        
+      
+        
+      
+        
       
         
       
@@ -670,7 +720,7 @@
   <span class="md-ellipsis">
     
   
-    Part 3 - 코드를 정리하자 — 함수
+    Part 3 - 게임을 체계적으로 — 함수와 배열
   
 
     
@@ -686,132 +736,11 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Part 3 - 코드를 정리하자 — 함수
+    Part 3 - 게임을 체계적으로 — 함수와 배열
   
 
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../chapter05/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    함수로 기능 분리하기 — 나만의 블록 만들기
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-      
-        
-      
-        
-      
-    
-    
-    
-      
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
-        
-          
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Part 4 - 데이터를 묶어서 관리하자 — 배열과 구조체
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Part 4 - 데이터를 묶어서 관리하자 — 배열과 구조체
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../chapter06/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    배열 — 질문 목록과 점수를 한곳에 저장하기
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
             
               
                 
@@ -827,7 +756,7 @@
   <span class="md-ellipsis">
     
   
-    구조체 — 플레이어 정보를 하나로 묶기
+    함수 (1) — 기능별로 코드를 나누자
   
 
     
@@ -840,73 +769,6 @@
   
 
               
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    
-      
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
-        
-          
-          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Part 5 - 한 걸음 더 — 포인터·비트연산자 맛보기와 게임 완성
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Part 5 - 한 걸음 더 — 포인터·비트연산자 맛보기와 게임 완성
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
             
               
                 
@@ -922,7 +784,7 @@
   <span class="md-ellipsis">
     
   
-    포인터 맛보기 — 주소라는 개념 이해하기
+    함수 (2) — 함수 선언과 지역변수 이해하기
   
 
     
@@ -950,7 +812,7 @@
   <span class="md-ellipsis">
     
   
-    비트연산자 맛보기 — 0과 1의 세계 엿보기
+    배열 (1) — 질문 목록과 점수를 한 곳에 모으자
   
 
     
@@ -978,7 +840,381 @@
   <span class="md-ellipsis">
     
   
-    MBTI 게임 최종 완성 — 전체 코드 통합과 회고
+    배열 (2) — MBTI 결과를 판정하자
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part 4 - 한 단계 더 — 구조체와 C언어의 깊은 세계 맛보기
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part 4 - 한 단계 더 — 구조체와 C언어의 깊은 세계 맛보기
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter11/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    구조체 (1) — 플레이어 정보를 하나로 묶자
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter12/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    구조체 (2) — 구조체와 함수를 연결하자
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    포인터 맛보기 — &와 *의 정체를 밝혀라
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    포인터 맛보기 — &와 *의 정체를 밝혀라
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="목차">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      목차
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 이 장에서 배우는 것
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📚 핵심 개념
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📚 핵심 개념">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        개념: 주소(&amp;)와 포인터(*)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔨 따라하기
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔨 따라하기">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1: 포인터의 기본 동작 확인하기
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📝 전체 코드
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚠️ 주의할 점
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✅ 점검하기
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔗 다음 장 미리보기
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter14/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    비트연산자 맛보기 — 컴퓨터가 진짜로 이해하는 언어
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter15/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    최종 완성 & 다음 여정 — MBTI 게임 총정리
   
 
     
@@ -1052,7 +1288,7 @@
   <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       
-        개념: 메모리 주소와 포인터
+        개념: 주소(&amp;)와 포인터(*)
       
     </span>
   </a>
@@ -1080,18 +1316,7 @@
   <a href="#step-1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 1: 주소 출력해보기
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 2: 포인터로 값 꺼내기
+        Step 1: 포인터의 기본 동작 확인하기
       
     </span>
   </a>
@@ -1164,116 +1389,118 @@
 
 
 
-<h1 id="_1">포인터 맛보기 — 주소의 세계 엿보기<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<h1 id="_1">포인터 맛보기 — &amp;와 *의 정체를 밝혀라<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <h2 id="_2">🎯 이 장에서 배우는 것<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <code>&amp;</code> 연산자로 변수의 메모리 주소를 확인할 수 있다</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 포인터 변수에 주소를 저장하고 <code>*</code>로 값을 꺼낼 수 있다</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <code>scanf</code>에서 <code>&amp;</code>를 쓰는 이유를 설명할 수 있다</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 변수의 주소(<code>&amp;</code>)와 포인터(<code>*</code>)의 개념을 비유로 이해할 수 있다</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <code>scanf</code>에서 <code>&amp;</code>를 써야 했던 이유를 설명할 수 있다</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <code>int *ptr = &amp;x</code> 패턴을 직접 작성하고 실행할 수 있다</li>
 </ul>
 <hr />
 <h2 id="_3">📚 핵심 개념<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<h3 id="_4">개념: 메모리 주소와 포인터<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
-<p><strong>비유로 시작</strong> 🏢</p>
-<p>변수는 마치 <strong>거대한 사물함의 한 칸</strong>과 같아요. 사물함 안에는 값(데이터)이 들어있고, 사물함 겉면에는 <strong>번호(주소)</strong>가 붙어 있습니다.</p>
+<h3 id="_4">개념: 주소(&amp;)와 포인터(*)<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p><strong>1. 비유로 시작</strong> 🏠</p>
+<p>변수는 <strong>집</strong>, 값은 집 안에 사는 <strong>사람</strong>이라고 생각해보세요.</p>
 <ul>
-<li><code>int score = 95;</code> → 사물함 안에 95를 넣음</li>
-<li><code>&amp;score</code> → 그 사물함의 <strong>번호표</strong>를 읽음</li>
-<li><strong>포인터 변수</strong> → 그 번호표를 <strong>메모해두는 메모지</strong> 📝</li>
-</ul>
-<p><strong>정확한 정의</strong></p>
-<ul>
-<li><code>&amp;변수</code> — 변수가 저장된 메모리 <strong>주소</strong>를 알려주는 연산자</li>
-<li><code>int *ptr</code> — 주소를 저장하는 <strong>포인터 변수</strong> 선언</li>
-<li><code>*ptr</code> — 포인터가 가리키는 주소에 가서 <strong>값을 꺼내기</strong>(역참조)</li>
+<li><code>int x = 10;</code> → 10이라는 사람이 x라는 집에 살고 있어요</li>
+<li><strong><code>&amp;x</code></strong> → "x라는 집의 <strong>주소</strong> 좀 알려줘!" (예: 서울시 강남구 123번지)</li>
+<li><strong><code>*ptr</code></strong> → "이 주소로 찾아가서 안에 사는 <strong>사람을 만나줘</strong>!"</li>
 </ul>
 <div class="mermaid">flowchart LR
-    A["int score = 95"] --&gt;|"&amp;score"| B["주소: 0x7fff1234"]
-    B --&gt;|"ptr = &amp;score"| C["포인터 ptr"]
-    C --&gt;|"*ptr"| D["값: 95"]</div>
-<p><strong>scanf에서 &amp; 쓰는 이유</strong> 💡</p>
-<p><code>scanf("%d", &amp;score);</code>는 "이 <strong>주소</strong>에 값을 넣어줘!"라는 뜻이에요. 주소를 알려줘야 scanf가 그 사물함을 찾아가서 값을 넣을 수 있습니다.</p>
+    A["변수 x\n값: 10"] --- B["주소: 0x7fff1234"]
+    C["포인터 ptr"] --&gt;|"ptr = &amp;x\n(주소 저장)"| B
+    B --&gt;|"*ptr\n(주소로 찾아가기)"| A</div>
+<p><strong>2. 정확한 정의</strong></p>
+<ul>
+<li><strong><code>&amp;변수</code></strong> — 해당 변수가 메모리 어디에 있는지, 그 <strong>주소를 반환</strong></li>
+<li><strong><code>int *ptr</code></strong> — 주소를 저장하는 특별한 변수, 즉 <strong>포인터 선언</strong></li>
+<li><strong><code>*ptr</code></strong> — 포인터가 가리키는 주소에 가서 <strong>값을 꺼냄</strong>(역참조)</li>
+</ul>
+<p><strong>3. 예시로 확인</strong></p>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">ptr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">x</span><span class="p">;</span><span class="w">  </span><span class="c1">// ptr에 x의 주소를 저장</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="n">printf</span><span class="p">(</span><span class="s">&quot;x의 값: %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">);</span><span class="w">       </span><span class="c1">// 10</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="n">printf</span><span class="p">(</span><span class="s">&quot;x의 주소: %p</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">x</span><span class="p">);</span><span class="w">    </span><span class="c1">// 0x7fff... (매번 다름)</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="n">printf</span><span class="p">(</span><span class="s">&quot;ptr이 가리키는 값: %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="n">ptr</span><span class="p">);</span><span class="w">  </span><span class="c1">// 10</span>
+</span></code></pre></div>
+<blockquote>
+<p>💡 <strong>드디어 밝혀지는 비밀!</strong> <code>scanf("%d", &amp;x);</code>에서 <code>&amp;x</code>를 쓴 이유? scanf는 <strong>주소를 받아서</strong> 그 위치에 직접 값을 넣어주는 함수이기 때문이에요. 주소를 안 알려주면 어디에 넣을지 모르겠죠!</p>
+</blockquote>
 <hr />
 <h2 id="_5">🔨 따라하기<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
-<h3 id="step-1">Step 1: 주소 출력해보기<a class="headerlink" href="#step-1" title="Permanent link">&para;</a></h3>
-<div class="language-c highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">score</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">95</span><span class="p">;</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;값  : %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">score</span><span class="p">);</span>
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;주소: %p</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="o">&amp;</span><span class="n">score</span><span class="p">);</span><span class="w">  </span><span class="c1">// %p로 주소 출력</span>
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="p">}</span>
-</span></code></pre></div>
-<p><strong>실행 결과</strong> (주소는 매번 다릅니다):
-<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>값  : 95
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>주소: 0x7ffeeb24
+<h3 id="step-1">Step 1: 포인터의 기본 동작 확인하기<a class="headerlink" href="#step-1" title="Permanent link">&para;</a></h3>
+<p><strong>코드</strong>:
+<div class="language-c highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">score</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">95</span><span class="p">;</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">ptr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">score</span><span class="p">;</span><span class="w">  </span><span class="c1">// score의 주소를 ptr에 저장</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;score의 값: %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">score</span><span class="p">);</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;score의 주소: %p</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">score</span><span class="p">);</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;ptr에 저장된 주소: %p</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">ptr</span><span class="p">);</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;ptr로 꺼낸 값: %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="n">ptr</span><span class="p">);</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">    </span><span class="c1">// 포인터를 통해 값 변경!</span>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">    </span><span class="o">*</span><span class="n">ptr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">100</span><span class="p">;</span>
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;변경 후 score: %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">score</span><span class="p">);</span>
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>
+</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="p">}</span>
 </span></code></pre></div></p>
-<h3 id="step-2">Step 2: 포인터로 값 꺼내기<a class="headerlink" href="#step-2" title="Permanent link">&para;</a></h3>
-<div class="language-c highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">score</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">95</span><span class="p">;</span>
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">ptr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">score</span><span class="p">;</span><span class="w">   </span><span class="c1">// 포인터에 주소 저장</span>
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
-</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;ptr이 가리키는 값: %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="n">ptr</span><span class="p">);</span><span class="w">  </span><span class="c1">// 역참조</span>
-</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>
-</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">    </span><span class="o">*</span><span class="n">ptr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">100</span><span class="p">;</span><span class="w">          </span><span class="c1">// 포인터로 값 변경!</span>
-</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;score 변경 후: %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">score</span><span class="p">);</span>
-</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>
-</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="p">}</span>
-</span></code></pre></div>
 <p><strong>실행 결과</strong>:
-<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>ptr이 가리키는 값: 95
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>score 변경 후: 100
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>score의 값: 95
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>score의 주소: 0x7ffd3a2c
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>ptr에 저장된 주소: 0x7ffd3a2c
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>ptr로 꺼낸 값: 95
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>변경 후 score: 100
 </span></code></pre></div></p>
 <blockquote>
-<p><code>*ptr = 100;</code>으로 바꿨는데 <code>score</code>가 바뀌었어요! 같은 사물함을 가리키고 있으니까요. 🎯</p>
+<p>🎉 <code>*ptr = 100;</code>으로 값을 바꿨더니 <code>score</code>도 바뀌었어요! 같은 주소를 가리키고 있으니 당연한 결과입니다.</p>
 </blockquote>
 <hr />
 <h2 id="_6">📝 전체 코드<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
-<div class="language-c highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">score</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">95</span><span class="p">;</span>
-</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">ptr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">score</span><span class="p">;</span>
-</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>
-</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">    </span><span class="c1">// 주소와 값 확인</span>
-</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;score의 값 : %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">score</span><span class="p">);</span>
-</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;score의 주소: %p</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="o">&amp;</span><span class="n">score</span><span class="p">);</span>
-</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;ptr의 값(주소): %p</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="n">ptr</span><span class="p">);</span>
-</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;ptr 역참조(*ptr): %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="n">ptr</span><span class="p">);</span>
-</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>
-</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="w">    </span><span class="c1">// 포인터로 값 변경</span>
-</span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="w">    </span><span class="o">*</span><span class="n">ptr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">100</span><span class="p">;</span>
-</span><span id="__span-4-15"><a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;변경 후 score: %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">score</span><span class="p">);</span>
-</span><span id="__span-4-16"><a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>
-</span><span id="__span-4-17"><a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-</span><span id="__span-4-18"><a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a><span class="p">}</span>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">score</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">95</span><span class="p">;</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">ptr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">score</span><span class="p">;</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;score의 값: %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">score</span><span class="p">);</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;score의 주소: %p</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">score</span><span class="p">);</span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;ptr에 저장된 주소: %p</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">ptr</span><span class="p">);</span>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;ptr로 꺼낸 값: %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="n">ptr</span><span class="p">);</span>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="w">    </span><span class="o">*</span><span class="n">ptr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">100</span><span class="p">;</span>
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;변경 후 score: %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">score</span><span class="p">);</span>
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>
+</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="p">}</span>
 </span></code></pre></div>
 <hr />
 <h2 id="_7">⚠️ 주의할 점<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>선언할 때 <code>*</code>와 사용할 때 <code>*</code>는 의미가 다릅니다</strong> — <code>int *ptr</code>은 "포인터 선언", <code>*ptr</code>은 "값 꺼내기"</li>
-<li><strong>포인터는 깊게 파면 어렵습니다</strong> — 지금은 "주소를 저장하는 변수"라는 감각만 잡으면 충분해요! 🙆</li>
+<li>🚨 <strong>선언할 때의 <code>*</code>와 사용할 때의 <code>*</code>는 의미가 달라요!</strong> <code>int *ptr</code>은 "포인터를 만든다"는 <strong>선언</strong>, <code>*ptr</code>은 "주소로 찾아가라"는 <strong>역참조</strong></li>
+<li>🚨 <strong>초기화 안 된 포인터를 쓰면 위험해요!</strong> 반드시 <code>&amp;변수</code>로 유효한 주소를 넣어준 뒤 사용하세요</li>
 </ul>
 <hr />
 <h2 id="_8">✅ 점검하기<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
-<p><strong>1. <code>&amp;score</code>는 무엇을 의미하나요?</strong></p>
-<details><summary>정답 확인</summary>변수 score가 저장된 메모리 주소를 의미합니다.</details>
+<p><strong>1. <code>scanf("%d", &amp;x);</code>에서 <code>&amp;</code>를 빼면 왜 문제가 될까요?</strong></p>
+<details><summary>정답 확인</summary>scanf는 값을 저장할 **메모리 주소**가 필요합니다. &를 빼면 x의 값(숫자)을 주소로 착각해서 엉뚱한 곳에 쓰려다 오류가 납니다.</details>
 
-<p><strong>2. <code>scanf("%d", &amp;num);</code>에서 &amp;를 빼면 어떻게 되나요?</strong></p>
-<details><summary>정답 확인</summary>scanf가 값을 저장할 주소를 모르기 때문에 오류가 발생하거나 예상치 못한 동작을 합니다.</details>
+<p><strong>2. <code>int *ptr = &amp;x;</code> 후 <code>*ptr = 50;</code>을 하면 x의 값은?</strong></p>
+<details><summary>정답 확인</summary>50입니다. ptr이 x의 주소를 가리키고 있으므로, *ptr로 값을 바꾸면 x 자체가 바뀝니다.</details>
 
-<p><strong>3. <code>int *ptr = &amp;x;</code> 후 <code>*ptr = 50;</code>을 하면 x의 값은?</strong></p>
-<details><summary>정답 확인</summary>50이 됩니다. ptr이 x의 주소를 가리키고 있으므로 *ptr로 값을 바꾸면 x도 바뀝니다.</details>
+<p><strong>3. <code>&amp;</code>와 <code>*</code>의 역할을 한 문장으로 각각 설명해보세요.</strong></p>
+<details><summary>정답 확인</summary>&는 "변수의 주소를 알려줘", *는 "이 주소에 찾아가서 값을 꺼내줘"입니다.</details>
 
 <hr />
+<p>"다음 장 미리보기" 섹션만 아래와 같이 교체하면 됩니다.</p>
 <h2 id="_9">🔗 다음 장 미리보기<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
-<p>다음 장에서는 <strong>비트 연산자</strong>를 맛봅니다! LED 8개를 한 바이트로 제어하거나, 하드웨어 레지스터를 다룰 때 꼭 필요한 <code>&amp;</code>, <code>|</code>, <code>&lt;&lt;</code> 같은 연산자를 가볍게 체험해볼게요. 🔧</p>
+<p>포인터를 배웠으니 이제 앞에서 만났던 <strong>구조체(struct)</strong>와 연결해볼 수 있어요!<br />
+구조체를 포인터로 다루면 <code>-&gt;</code> 연산자가 등장하고, 함수에 구조체를 효율적으로 넘기는 방법도 배울 수 있습니다.<br />
+지금까지 배운 것들이 하나로 연결되는 순간이 다가오고 있어요 💪</p>
 
 
 
