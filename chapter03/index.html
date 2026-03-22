@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#mbti" class="md-skip">
+        <a href="#if-else" class="md-skip">
           콘텐츠로 이동
         </a>
       
@@ -674,10 +674,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#printf-scanf" class="md-nav__link">
+  <a href="#if-else_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        개념: printf와 scanf
+        개념: 조건문 (if-else)
       
     </span>
   </a>
@@ -702,10 +702,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#step-1" class="md-nav__link">
+  <a href="#step-1-mbti" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 1: 게임 타이틀 출력하기
+        Step 1: 첫 번째 MBTI 질문 만들기
       
     </span>
   </a>
@@ -716,7 +716,7 @@
   <a href="#step-2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 2: 이름 입력받고 환영하기
+        Step 2: 점수를 변수로 누적하기
       
     </span>
   </a>
@@ -1229,10 +1229,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#printf-scanf" class="md-nav__link">
+  <a href="#if-else_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        개념: printf와 scanf
+        개념: 조건문 (if-else)
       
     </span>
   </a>
@@ -1257,10 +1257,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#step-1" class="md-nav__link">
+  <a href="#step-1-mbti" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 1: 게임 타이틀 출력하기
+        Step 1: 첫 번째 MBTI 질문 만들기
       
     </span>
   </a>
@@ -1271,7 +1271,7 @@
   <a href="#step-2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 2: 이름 입력받고 환영하기
+        Step 2: 점수를 변수로 누적하기
       
     </span>
   </a>
@@ -1344,119 +1344,213 @@
 
 
 
-<h1 id="mbti">입출력 — MBTI 게임의 첫 화면 만들기<a class="headerlink" href="#mbti" title="Permanent link">&para;</a></h1>
+<h1 id="if-else">if-else로 갈림길 만들기 — 질문과 선택<a class="headerlink" href="#if-else" title="Permanent link">&para;</a></h1>
+<p><strong>Part 2</strong>: 게임 로직 만들기 — 조건문과 반복문</p>
+<hr />
 <h2 id="_1">🎯 이 장에서 배우는 것<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <code>printf</code>와 <code>scanf</code>로 화면 출력과 키보드 입력을 처리할 수 있다</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 플레이어 이름을 입력받아 환영 메시지를 출력하는 MBTI 게임 첫 화면을 완성할 수 있다</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> if, else if, else 문법을 이해하고 올바르게 작성할 수 있다</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 비교 연산자(==, !=, &lt;, &gt;)를 조건문에 활용할 수 있다</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 사용자 입력에 따라 다른 결과를 출력하는 분기 구조를 만들 수 있다</li>
 </ul>
 <hr />
 <h2 id="_2">📚 핵심 개념<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<h3 id="printf-scanf">개념: printf와 scanf<a class="headerlink" href="#printf-scanf" title="Permanent link">&para;</a></h3>
-<p><strong>비유로 시작</strong> 💡</p>
-<p><code>printf</code>는 <strong>게임 화면에 글자를 띄우는 전광판</strong>, <code>scanf</code>는 <strong>플레이어가 답을 적는 입력창</strong>이라고 생각하세요.</p>
-<p><strong>파이썬과 비교하면 바로 이해됩니다!</strong></p>
-<p>파이썬에서는 이렇게 했죠:</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;이름을 입력하세요: &quot;</span><span class="p">)</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">님, 환영합니다!&quot;</span><span class="p">)</span>
+<h3 id="if-else_1">개념: 조건문 (if-else)<a class="headerlink" href="#if-else_1" title="Permanent link">&para;</a></h3>
+<p><strong>비유로 시작</strong> 🚦</p>
+<p>조건문은 마치 <strong>갈림길의 이정표</strong>와 같아요. "비가 오면 우산을 챙기고, 안 오면 그냥 나간다" — 이런 판단을 코드로 표현하는 것이 바로 <code>if-else</code>입니다.</p>
+<p><strong>정확한 정의</strong></p>
+<p>조건이 <strong>참(true)</strong> 이면 <code>if</code> 블록을, <strong>거짓(false)</strong> 이면 <code>else</code> 블록을 실행합니다. 조건이 여러 개면 <code>else if</code>로 이어갑니다.</p>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">조건1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="c1">// 조건1이 참일 때</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">조건2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="c1">// 조건2가 참일 때</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">    </span><span class="c1">// 모두 거짓일 때</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="p">}</span>
 </span></code></pre></div>
-<p>C에서는 조금 다릅니다:</p>
-<div class="language-c highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kt">char</span><span class="w"> </span><span class="n">name</span><span class="p">[</span><span class="mi">50</span><span class="p">];</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">printf</span><span class="p">(</span><span class="s">&quot;이름을 입력하세요: &quot;</span><span class="p">);</span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%s&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">);</span>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%s님, 환영합니다!</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">);</span>
-</span></code></pre></div>
-<p><strong>핵심 차이 3가지:</strong></p>
-<ul>
-<li><strong><code>printf</code></strong> → <code>%s</code> 같은 <strong>서식 지정자</strong>로 변수 위치를 표시해요</li>
-<li><strong><code>scanf</code></strong> → 입력값을 담을 <strong>그릇(변수)</strong>을 미리 만들어야 해요</li>
-<li><strong><code>char name[50]</code></strong> → 문자열을 담는 그릇! 글자 50개짜리 상자를 준비하는 거예요 📦</li>
-</ul>
 <blockquote>
-<p>🔑 <code>%s</code>는 "여기에 문자열이 들어갈 자리"라는 표시입니다. <code>\n</code>은 줄바꿈!</p>
+<p>💡 <strong>파이썬과의 차이</strong>: 파이썬은 <code>elif</code>와 콜론(<code>:</code>)을 쓰지만, C언어는 <code>else if</code>와 <strong>소괄호 <code>()</code></strong>, <strong>중괄호 <code>{}</code></strong> 를 씁니다!</p>
 </blockquote>
+<p><strong>비교 연산자 — 조건을 만드는 도구</strong></p>
+<ul>
+<li><code>==</code> → 같다 ("a와 b가 같니?")</li>
+<li><code>!=</code> → 다르다</li>
+<li><code>&lt;</code>, <code>&gt;</code> → 작다, 크다</li>
+<li><code>&lt;=</code>, <code>&gt;=</code> → 작거나 같다, 크거나 같다</li>
+</ul>
+<div class="mermaid">flowchart TD
+    A["사용자 입력 받기"] --&gt; B{"answer == 1?"}
+    B -- 참 --&gt; C["E 점수 +1"]
+    B -- 거짓 --&gt; D{"answer == 2?"}
+    D -- 참 --&gt; E["I 점수 +1"]
+    D -- 거짓 --&gt; F["잘못된 입력 안내"]</div>
 <hr />
 <h2 id="_3">🔨 따라하기<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<h3 id="step-1">Step 1: 게임 타이틀 출력하기<a class="headerlink" href="#step-1" title="Permanent link">&para;</a></h3>
-<div class="language-c highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;==============================</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;    MBTI 성격유형 테스트</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;==============================</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
-</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="p">}</span>
+<h3 id="step-1-mbti">Step 1: 첫 번째 MBTI 질문 만들기<a class="headerlink" href="#step-1-mbti" title="Permanent link">&para;</a></h3>
+<p>MBTI의 E/I 판별 질문을 하나 만들어 봅시다. 사용자가 1을 누르면 외향(E), 2를 누르면 내향(I)으로 판정합니다.</p>
+<p><strong>코드</strong>:</p>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">answer</span><span class="p">;</span><span class="w">  </span><span class="c1">// 사용자의 답을 저장할 변수</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;=== MBTI 질문 1 ===</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;파티에 가면 당신은?</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;1: 새로운 사람에게 먼저 말을 건다</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;2: 아는 사람 옆에 있는다</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;선택: &quot;</span><span class="p">);</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">    </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">answer</span><span class="p">);</span>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">answer</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;→ 외향(E) 성향입니다!</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">answer</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;→ 내향(I) 성향입니다!</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;→ 1 또는 2만 입력해 주세요.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>
+</span><span id="__span-1-21"><a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-1-22"><a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a><span class="p">}</span>
 </span></code></pre></div>
-<p><strong>실행 결과:</strong>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>==============================
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>    MBTI 성격유형 테스트
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>==============================
-</span></code></pre></div></p>
-<h3 id="step-2">Step 2: 이름 입력받고 환영하기<a class="headerlink" href="#step-2" title="Permanent link">&para;</a></h3>
-<div class="language-c highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="n">name</span><span class="p">[</span><span class="mi">50</span><span class="p">];</span><span class="w">  </span><span class="c1">// 이름을 담을 그릇</span>
-</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>
-</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;==============================</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
-</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;    MBTI 성격유형 테스트</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
-</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;==============================</span><span class="se">\n\n</span><span class="s">&quot;</span><span class="p">);</span>
-</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>
-</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;플레이어 이름을 입력하세요: &quot;</span><span class="p">);</span>
-</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="w">    </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%s&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">);</span>
-</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>
-</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">%s님, MBTI 테스트를 시작합니다!</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">);</span>
-</span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-</span><span id="__span-4-15"><a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="p">}</span>
+<p><strong>실행 결과</strong> (1을 입력한 경우):</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>=== MBTI 질문 1 ===
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>파티에 가면 당신은?
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>1: 새로운 사람에게 먼저 말을 건다
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>2: 아는 사람 옆에 있는다
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>선택: 1
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>→ 외향(E) 성향입니다!
 </span></code></pre></div>
-<p><strong>실행 결과:</strong>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>==============================
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>    MBTI 성격유형 테스트
-</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>==============================
-</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
-</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>플레이어 이름을 입력하세요: 민수
-</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>
-</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>민수님, MBTI 테스트를 시작합니다!
-</span></code></pre></div></p>
-<p>🎉 축하합니다! MBTI 게임의 첫 화면이 완성됐어요!</p>
+<h3 id="step-2">Step 2: 점수를 변수로 누적하기<a class="headerlink" href="#step-2" title="Permanent link">&para;</a></h3>
+<p>실제 MBTI 테스트는 한 문제가 아니라 점수를 <strong>누적</strong>해서 판정합니다. 점수 변수를 추가해 봅시다.</p>
+<p><strong>코드</strong>:</p>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">answer</span><span class="p">;</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">e_score</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w">  </span><span class="c1">// E 점수</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">i_score</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w">  </span><span class="c1">// I 점수</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">    </span><span class="c1">// 질문 1</span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Q1. 파티에 가면?</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;1: 새로운 사람과 대화  2: 아는 사람과 대화</span><span class="se">\n</span><span class="s">선택: &quot;</span><span class="p">);</span>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">    </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">answer</span><span class="p">);</span>
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">answer</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="w">        </span><span class="n">e_score</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">e_score</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">  </span><span class="c1">// E 점수 1점 추가</span>
+</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">answer</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="w">        </span><span class="n">i_score</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i_score</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">  </span><span class="c1">// I 점수 1점 추가</span>
+</span><span id="__span-3-17"><a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-3-18"><a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>
+</span><span id="__span-3-19"><a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a><span class="w">    </span><span class="c1">// 질문 2</span>
+</span><span id="__span-3-20"><a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">Q2. 주말에 에너지를 충전하는 방법은?</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+</span><span id="__span-3-21"><a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;1: 친구들과 만남  2: 혼자만의 시간</span><span class="se">\n</span><span class="s">선택: &quot;</span><span class="p">);</span>
+</span><span id="__span-3-22"><a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a><span class="w">    </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">answer</span><span class="p">);</span>
+</span><span id="__span-3-23"><a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a>
+</span><span id="__span-3-24"><a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">answer</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-25"><a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a><span class="w">        </span><span class="n">e_score</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">e_score</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+</span><span id="__span-3-26"><a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">answer</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-27"><a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a><span class="w">        </span><span class="n">i_score</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i_score</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+</span><span id="__span-3-28"><a id="__codelineno-3-28" name="__codelineno-3-28" href="#__codelineno-3-28"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-3-29"><a id="__codelineno-3-29" name="__codelineno-3-29" href="#__codelineno-3-29"></a>
+</span><span id="__span-3-30"><a id="__codelineno-3-30" name="__codelineno-3-30" href="#__codelineno-3-30"></a><span class="w">    </span><span class="c1">// 결과 판정</span>
+</span><span id="__span-3-31"><a id="__codelineno-3-31" name="__codelineno-3-31" href="#__codelineno-3-31"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">=== 결과 ===</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+</span><span id="__span-3-32"><a id="__codelineno-3-32" name="__codelineno-3-32" href="#__codelineno-3-32"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">e_score</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">i_score</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-33"><a id="__codelineno-3-33" name="__codelineno-3-33" href="#__codelineno-3-33"></a><span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;당신은 E(외향)! (E:%d, I:%d)</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">e_score</span><span class="p">,</span><span class="w"> </span><span class="n">i_score</span><span class="p">);</span>
+</span><span id="__span-3-34"><a id="__codelineno-3-34" name="__codelineno-3-34" href="#__codelineno-3-34"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">i_score</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">e_score</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-35"><a id="__codelineno-3-35" name="__codelineno-3-35" href="#__codelineno-3-35"></a><span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;당신은 I(내향)! (E:%d, I:%d)</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">e_score</span><span class="p">,</span><span class="w"> </span><span class="n">i_score</span><span class="p">);</span>
+</span><span id="__span-3-36"><a id="__codelineno-3-36" name="__codelineno-3-36" href="#__codelineno-3-36"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-37"><a id="__codelineno-3-37" name="__codelineno-3-37" href="#__codelineno-3-37"></a><span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;E와 I가 균형! (E:%d, I:%d)</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">e_score</span><span class="p">,</span><span class="w"> </span><span class="n">i_score</span><span class="p">);</span>
+</span><span id="__span-3-38"><a id="__codelineno-3-38" name="__codelineno-3-38" href="#__codelineno-3-38"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-3-39"><a id="__codelineno-3-39" name="__codelineno-3-39" href="#__codelineno-3-39"></a>
+</span><span id="__span-3-40"><a id="__codelineno-3-40" name="__codelineno-3-40" href="#__codelineno-3-40"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-3-41"><a id="__codelineno-3-41" name="__codelineno-3-41" href="#__codelineno-3-41"></a><span class="p">}</span>
+</span></code></pre></div>
+<p><strong>실행 결과</strong> (1, 2를 차례로 입력한 경우):</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>Q1. 파티에 가면?
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>1: 새로운 사람과 대화  2: 아는 사람과 대화
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>선택: 1
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>Q2. 주말에 에너지를 충전하는 방법은?
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>1: 친구들과 만남  2: 혼자만의 시간
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>선택: 2
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>=== 결과 ===
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>E와 I가 균형! (E:1, I:1)
+</span></code></pre></div>
 <hr />
 <h2 id="_4">📝 전체 코드<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
-<div class="language-c highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
-</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="n">name</span><span class="p">[</span><span class="mi">50</span><span class="p">];</span>
-</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>
-</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;==============================</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
-</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;    MBTI 성격유형 테스트</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
-</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;==============================</span><span class="se">\n\n</span><span class="s">&quot;</span><span class="p">);</span>
-</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>
-</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;플레이어 이름을 입력하세요: &quot;</span><span class="p">);</span>
-</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="w">    </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%s&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">);</span>
-</span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>
-</span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">%s님, MBTI 테스트를 시작합니다!</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">);</span>
-</span><span id="__span-6-14"><a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-</span><span id="__span-6-15"><a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a><span class="p">}</span>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">answer</span><span class="p">;</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">e_score</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">i_score</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Q1. 파티에 가면?</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;1: 새로운 사람과 대화  2: 아는 사람과 대화</span><span class="se">\n</span><span class="s">선택: &quot;</span><span class="p">);</span>
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="w">    </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">answer</span><span class="p">);</span>
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">answer</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">e_score</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">e_score</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">answer</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">i_score</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i_score</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>
+</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">Q2. 주말에 에너지를 충전하는 방법은?</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;1: 친구들과 만남  2: 혼자만의 시간</span><span class="se">\n</span><span class="s">선택: &quot;</span><span class="p">);</span>
+</span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a><span class="w">    </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">answer</span><span class="p">);</span>
+</span><span id="__span-5-17"><a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">answer</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">e_score</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">e_score</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-5-18"><a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a><span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">answer</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">i_score</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i_score</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-5-19"><a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a>
+</span><span id="__span-5-20"><a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">=== 결과 ===</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+</span><span id="__span-5-21"><a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">e_score</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">i_score</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-22"><a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a><span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;당신은 E(외향)! (E:%d, I:%d)</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">e_score</span><span class="p">,</span><span class="w"> </span><span class="n">i_score</span><span class="p">);</span>
+</span><span id="__span-5-23"><a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">i_score</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">e_score</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-24"><a id="__codelineno-5-24" name="__codelineno-5-24" href="#__codelineno-5-24"></a><span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;당신은 I(내향)! (E:%d, I:%d)</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">e_score</span><span class="p">,</span><span class="w"> </span><span class="n">i_score</span><span class="p">);</span>
+</span><span id="__span-5-25"><a id="__codelineno-5-25" name="__codelineno-5-25" href="#__codelineno-5-25"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-26"><a id="__codelineno-5-26" name="__codelineno-5-26" href="#__codelineno-5-26"></a><span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;E와 I가 균형! (E:%d, I:%d)</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">e_score</span><span class="p">,</span><span class="w"> </span><span class="n">i_score</span><span class="p">);</span>
+</span><span id="__span-5-27"><a id="__codelineno-5-27" name="__codelineno-5-27" href="#__codelineno-5-27"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-5-28"><a id="__codelineno-5-28" name="__codelineno-5-28" href="#__codelineno-5-28"></a>
+</span><span id="__span-5-29"><a id="__codelineno-5-29" name="__codelineno-5-29" href="#__codelineno-5-29"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-5-30"><a id="__codelineno-5-30" name="__codelineno-5-30" href="#__codelineno-5-30"></a><span class="p">}</span>
 </span></code></pre></div>
 <hr />
 <h2 id="_5">⚠️ 주의할 점<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong><code>scanf("%s", name)</code>에서 <code>name</code> 앞에 <code>&amp;</code>가 없어요!</strong> 배열 이름은 이미 주소 역할을 하기 때문입니다. 나중에 <code>int</code> 변수를 입력받을 때는 <code>&amp;</code>가 필요하니 기억해두세요 🧠</li>
-<li><strong><code>scanf("%s", ...)</code>는 공백 전까지만 읽어요.</strong> "홍 길동"을 입력하면 "홍"만 저장됩니다</li>
+<li><strong><code>=</code>와 <code>==</code>을 헷갈리지 마세요!</strong> <code>=</code>는 값을 넣는 것(대입), <code>==</code>는 같은지 비교하는 것입니다. <code>if (answer = 1)</code>이라고 쓰면 항상 참이 되어 버려요! 🐛</li>
+<li><strong>중괄호 <code>{}</code>를 빠뜨리지 마세요.</strong> 한 줄이라도 중괄호로 감싸는 습관을 들이면 버그를 예방할 수 있습니다.</li>
 </ul>
 <hr />
 <h2 id="_6">✅ 점검하기<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
-<p><strong>1. C에서 화면에 글자를 출력하는 함수는?</strong></p>
-<details><summary>정답 확인</summary>printf — 서식 지정자(%s, %d 등)를 사용해 변수 값을 함께 출력할 수 있습니다.</details>
+<p><strong>1. 다음 코드의 출력 결과는?</strong></p>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">10</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;A&quot;</span><span class="p">);</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;B&quot;</span><span class="p">);</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;C&quot;</span><span class="p">);</span>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="p">}</span>
+</span></code></pre></div>
+<details><summary>정답 확인</summary>
 
-<p><strong>2. <code>printf("%s님 안녕!\n", name);</code>에서 <code>%s</code>의 역할은?</strong></p>
-<details><summary>정답 확인</summary>%s 자리에 name 변수의 문자열 값이 대입되어 출력됩니다.</details>
+`B`가 출력됩니다. x는 5이므로 `x > 10`은 거짓, `x > 3`은 참이라 두 번째 블록이 실행됩니다.
 
-<p><strong>3. <code>char name[50];</code>은 무엇을 의미하나요?</strong></p>
-<details><summary>정답 확인</summary>최대 50글자를 담을 수 있는 문자열 변수(배열)를 선언하는 것입니다.</details>
+</details>
+
+<p><strong>2. <code>if (answer = 2)</code>와 <code>if (answer == 2)</code>의 차이는?</strong></p>
+<details><summary>정답 확인</summary>
+
+`answer = 2`는 answer에 2를 **대입**하는 것이고 (항상 참으로 평가됨), `answer == 2`는 answer가 2인지 **비교**하는 것입니다. 조건문에서는 반드시 `==`를 써야 합니다.
+
+</details>
+
+<p><strong>3. 세 가지 이상의 경우를 분기하려면 어떤 키워드를 사용하나요?</strong></p>
+<details><summary>정답 확인</summary>
+
+`else if`를 사용합니다. `if → else if → else if → ... → else` 순서로 원하는 만큼 분기할 수 있습니다.
+
+</details>
 
 <hr />
 <h2 id="_7">🔗 다음 장 미리보기<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
-<p>다음 장에서는 <strong>변수와 조건문</strong>을 배워서, 플레이어의 답변에 따라 다른 질문을 보여주는 MBTI 분기 로직을 만들어봅니다! 🚀</p>
+<p>지금은 같은 질문-판정 코드를 <strong>복사-붙여넣기</strong>로 반복하고 있어요. 질문이 10개라면? 😱 다음 장에서는 <strong>반복문(for, while)</strong> 을 배워서, 코드를 복사하지 않고도 여러 질문을 자동으로 반복하는 방법을 익힙니다!</p>
 
 
 
