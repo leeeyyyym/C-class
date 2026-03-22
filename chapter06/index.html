@@ -61,6 +61,7 @@
 
     
     
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-light.min.css">
   </head>
   
   
@@ -1303,22 +1304,23 @@
 </table>
 <hr />
 <h3 id="1-while-1-break">방법 1: <code>while (1)</code> + <code>break</code><a class="headerlink" href="#1-while-1-break" title="Permanent link">&para;</a></h3>
-<p>```c
-while (1) {         // 무한루프 시작
+<div class="codehilite"><pre><code class="language-c">while (1) {         // 무한루프 시작
     // 코드 실행
     if (조건) {
         break;      // 조건 만족 시 탈출!
     }
 }
-while (1)은 조건이 항상 참(1)이라 영원히 돌아가는 반복문입니다.
+</code></pre></div>
+<p>while (1)은 조건이 항상 참(1)이라 영원히 돌아가는 반복문입니다.
 탈출하려면 반드시 break가 필요합니다.</p>
 <p>⚠️ break 없이 while (1)을 쓰면 프로그램이 영원히 끝나지 않습니다!
 실수로 빠졌다면 Ctrl + C로 탈출하세요.</p>
-<p>방법 2: do-while문
-do {
+<p>방법 2: do-while문</p>
+<div class="codehilite"><pre><code class="language-c">do {
     // 코드 실행  ← 조건 확인 전에 무조건 한 번 실행!
 } while (조건);     // 조건이 참이면 다시 위로 올라감
-while문과 do-while문의 차이를 그림으로 비교해봅시다.</p>
+</code></pre></div>
+<p>while문과 do-while문의 차이를 그림으로 비교해봅시다.</p>
 <p>[ while문 ]                    [ do-while문 ]</p>
 <p>조건 확인 ──거짓──▶ 종료        실행
     │                            │
@@ -1330,30 +1332,31 @@ while문과 do-while문의 차이를 그림으로 비교해봅시다.</p>
 💡 핵심 차이: while문은 조건이 처음부터 거짓이면 한 번도 실행 안 되지만,
 do-while문은 무조건 최소 1번은 실행됩니다!</p>
 <p>do-while 문법 주의사항:</p>
-<p>do {
+<div class="codehilite"><pre><code class="language-c">do {
     // 코드
 } while (조건);  // ← 세미콜론(;) 필수! 자주 빠뜨리는 실수입니다
 🔨 따라하기
 Step 1: while (1) + break로 유효한 입력 받기
 1 또는 2만 허용하고, 그 외에는 다시 물어보는 코드입니다.</p>
-<h1 id="include">include <stdio.h><a class="headerlink" href="#include" title="Permanent link">&para;</a></h1>
-<p>int main(void) {
-    int answer;</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">while</span><span class="w"> </span><span class="o">(</span><span class="nt">1</span><span class="o">)</span><span class="w"> </span><span class="p">{</span><span class="w">                          </span><span class="err">//</span><span class="w"> </span><span class="err">무한루프</span><span class="w"> </span><span class="err">시작</span>
-<span class="w">    </span><span class="err">printf(&quot;선택하세요</span><span class="w"> </span><span class="err">(1</span><span class="w"> </span><span class="err">또는</span><span class="w"> </span><span class="err">2):</span><span class="w"> </span><span class="err">&quot;)</span><span class="p">;</span>
-<span class="w">    </span><span class="err">scanf(&quot;%d&quot;,</span><span class="w"> </span><span class="err">&amp;answer)</span><span class="p">;</span>
+<div class="codehilite"><pre><code class="language-c">#include &lt;stdio.h&gt;
 
-<span class="w">    </span><span class="err">if</span><span class="w"> </span><span class="err">(answer</span><span class="w"> </span><span class="err">==</span><span class="w"> </span><span class="err">1</span><span class="w"> </span><span class="err">||</span><span class="w"> </span><span class="err">answer</span><span class="w"> </span><span class="err">==</span><span class="w"> </span><span class="err">2)</span><span class="w"> </span><span class="err">{</span>
-<span class="w">        </span><span class="err">break</span><span class="p">;</span><span class="w">                       </span><span class="err">//</span><span class="w"> </span><span class="err">올바른</span><span class="w"> </span><span class="err">입력이면</span><span class="w"> </span><span class="err">탈출!</span>
-<span class="w">    </span><span class="p">}</span>
+int main(void) {
+    int answer;
+while (1) {                          // 무한루프 시작
+    printf("선택하세요 (1 또는 2): ");
+    scanf("%d", &amp;answer);
 
-<span class="w">    </span><span class="nt">printf</span><span class="o">(</span><span class="s2">&quot;⚠️ 1 또는 2만 입력해주세요. 다시!\n&quot;</span><span class="o">);</span>
-<span class="w">    </span><span class="o">//</span><span class="w"> </span><span class="nt">break</span><span class="w"> </span><span class="nt">없이</span><span class="w"> </span><span class="nt">계속</span><span class="w"> </span><span class="err">→</span><span class="w"> </span><span class="nt">자동으로</span><span class="w"> </span><span class="nt">반복문</span><span class="w"> </span><span class="nt">처음으로</span><span class="w"> </span><span class="nt">돌아감</span>
-<span class="err">}</span>
+    if (answer == 1 || answer == 2) {
+        break;                       // 올바른 입력이면 탈출!
+    }
 
-<span class="nt">printf</span><span class="o">(</span><span class="s2">&quot;입력한 값: %d\n&quot;</span><span class="o">,</span><span class="w"> </span><span class="nt">answer</span><span class="o">);</span>
+    printf("⚠️ 1 또는 2만 입력해주세요. 다시!\n");
+    // break 없이 계속 → 자동으로 반복문 처음으로 돌아감
+}
 
-<span class="nt">return</span><span class="w"> </span><span class="nt">0</span><span class="o">;</span>
+printf("입력한 값: %d\n", answer);
+
+return 0;
 </code></pre></div>
 
 <p>}
@@ -1366,22 +1369,23 @@ Step 1: while (1) + break로 유효한 입력 받기
 입력한 값: 1
 Step 2: 똑같은 걸 do-while로 바꿔보기
 Step 1과 동일한 동작을 do-while로 표현하면 이렇습니다.</p>
-<h1 id="include_1">include <stdio.h><a class="headerlink" href="#include_1" title="Permanent link">&para;</a></h1>
-<p>int main(void) {
-    int answer;</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">do</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="err">printf(&quot;선택하세요</span><span class="w"> </span><span class="err">(1</span><span class="w"> </span><span class="err">또는</span><span class="w"> </span><span class="err">2):</span><span class="w"> </span><span class="err">&quot;)</span><span class="p">;</span>
-<span class="w">    </span><span class="err">scanf(&quot;%d&quot;,</span><span class="w"> </span><span class="err">&amp;answer)</span><span class="p">;</span>
+<div class="codehilite"><pre><code class="language-c">#include &lt;stdio.h&gt;
 
-<span class="w">    </span><span class="err">if</span><span class="w"> </span><span class="err">(answer</span><span class="w"> </span><span class="err">!=</span><span class="w"> </span><span class="err">1</span><span class="w"> </span><span class="err">&amp;&amp;</span><span class="w"> </span><span class="err">answer</span><span class="w"> </span><span class="err">!=</span><span class="w"> </span><span class="err">2)</span><span class="w"> </span><span class="err">{</span>
-<span class="w">        </span><span class="err">printf(&quot;⚠️</span><span class="w"> </span><span class="err">1</span><span class="w"> </span><span class="err">또는</span><span class="w"> </span><span class="err">2만</span><span class="w"> </span><span class="err">입력해주세요.</span><span class="w"> </span><span class="err">다시!\n&quot;)</span><span class="p">;</span>
-<span class="w">    </span><span class="p">}</span>
+int main(void) {
+    int answer;
+do {
+    printf("선택하세요 (1 또는 2): ");
+    scanf("%d", &amp;answer);
 
-<span class="err">}</span><span class="w"> </span><span class="nt">while</span><span class="w"> </span><span class="o">(</span><span class="nt">answer</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="nt">1</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nt">answer</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="nt">2</span><span class="o">);</span><span class="w">  </span><span class="o">//</span><span class="w"> </span><span class="nt">잘못된</span><span class="w"> </span><span class="nt">입력이면</span><span class="w"> </span><span class="nt">다시</span><span class="o">!</span>
+    if (answer != 1 &amp;&amp; answer != 2) {
+        printf("⚠️ 1 또는 2만 입력해주세요. 다시!\n");
+    }
 
-<span class="nt">printf</span><span class="o">(</span><span class="s2">&quot;입력한 값: %d\n&quot;</span><span class="o">,</span><span class="w"> </span><span class="nt">answer</span><span class="o">);</span>
+} while (answer != 1 &amp;&amp; answer != 2);  // 잘못된 입력이면 다시!
 
-<span class="nt">return</span><span class="w"> </span><span class="nt">0</span><span class="o">;</span>
+printf("입력한 값: %d\n", answer);
+
+return 0;
 </code></pre></div>
 
 <p>}
@@ -1389,42 +1393,43 @@ Step 1과 동일한 동작을 do-while로 표현하면 이렇습니다.</p>
 do-while은 "올바른 입력이 들어올 때까지 반복한다"는 의도가 더 잘 보이는 장점이 있습니다.</p>
 <p>Step 3: MBTI 게임에 유효성 검사 추가하기
 지금까지 배운 반복문에 유효성 검사를 넣어서 게임을 완성해봅시다.</p>
-<h1 id="include_2">include <stdio.h><a class="headerlink" href="#include_2" title="Permanent link">&para;</a></h1>
-<p>int main(void) {</p>
-<div class="codehilite"><pre><span></span><code><span class="c1">// 점수와 질문 번호를 저장할 변수</span>
-<span class="nb">int</span><span class="w"> </span><span class="n">score</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-<span class="nb">int</span><span class="w"> </span><span class="n">answer</span><span class="p">;</span>
-<span class="nb">int</span><span class="w"> </span><span class="n">i</span><span class="p">;</span>
+<div class="codehilite"><pre><code class="language-c">#include &lt;stdio.h&gt;
 
-<span class="c1">// 4개의 질문을 순서대로 진행</span>
-<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="p">=</span><span class="w"> </span><span class="mi">4</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+int main(void) {
+// 점수와 질문 번호를 저장할 변수
+int score = 0;
+int answer;
+int i;
 
-<span class="w">    </span><span class="c1">// 질문 출력</span>
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="nb">printf</span><span class="p">(</span><span class="s">&quot;\nQ%d. 혼자 있는 시간이 편하다\n&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="p">);</span>
-<span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="nb">printf</span><span class="p">(</span><span class="s">&quot;\nQ%d. 계획 없이 여행을 떠날 수 있다\n&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="p">);</span>
-<span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span><span class="w"> </span><span class="nb">printf</span><span class="p">(</span><span class="s">&quot;\nQ%d. 논리가 감정보다 중요하다\n&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="p">);</span>
-<span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">4</span><span class="p">)</span><span class="w"> </span><span class="nb">printf</span><span class="p">(</span><span class="s">&quot;\nQ%d. 마감 직전에 집중력이 올라간다\n&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="p">);</span>
+// 4개의 질문을 순서대로 진행
+for (i = 1; i &lt;= 4; i++) {
 
-<span class="w">    </span><span class="c1">// 🔒 유효성 검사: 1 또는 2가 입력될 때까지 반복</span>
-<span class="w">    </span><span class="k">do</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nb">printf</span><span class="p">(</span><span class="s">&quot;  👉 그렇다(1) / 아니다(2): &quot;</span><span class="p">);</span>
-<span class="w">        </span><span class="nb">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">answer</span><span class="p">);</span>
+    // 질문 출력
+    if (i == 1) printf("\nQ%d. 혼자 있는 시간이 편하다\n", i);
+    else if (i == 2) printf("\nQ%d. 계획 없이 여행을 떠날 수 있다\n", i);
+    else if (i == 3) printf("\nQ%d. 논리가 감정보다 중요하다\n", i);
+    else if (i == 4) printf("\nQ%d. 마감 직전에 집중력이 올라간다\n", i);
 
-<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">answer</span><span class="w"> </span>!<span class="p">=</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">answer</span><span class="w"> </span>!<span class="p">=</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">            </span><span class="nb">printf</span><span class="p">(</span><span class="s">&quot;  ⚠️ 1 또는 2만 입력해주세요!\n&quot;</span><span class="p">);</span>
-<span class="w">        </span><span class="p">}</span>
+    // 🔒 유효성 검사: 1 또는 2가 입력될 때까지 반복
+    do {
+        printf("  👉 그렇다(1) / 아니다(2): ");
+        scanf("%d", &amp;answer);
 
-<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">answer</span><span class="w"> </span>!<span class="p">=</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">answer</span><span class="w"> </span>!<span class="p">=</span><span class="w"> </span><span class="mi">2</span><span class="p">);</span>
+        if (answer != 1 &amp;&amp; answer != 2) {
+            printf("  ⚠️ 1 또는 2만 입력해주세요!\n");
+        }
 
-<span class="w">    </span><span class="c1">// 점수 계산</span>
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">answer</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="n">score</span><span class="o">++</span><span class="p">;</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="p">}</span>
+    } while (answer != 1 &amp;&amp; answer != 2);
 
-<span class="nb">printf</span><span class="p">(</span><span class="s">&quot;\n✨ 완료! 총 점수: %d / 4\n&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">score</span><span class="p">);</span>
+    // 점수 계산
+    if (answer == 1) {
+        score++;
+    }
+}
 
-<span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+printf("\n✨ 완료! 총 점수: %d / 4\n", score);
+
+return 0;
 </code></pre></div>
 
 <p>}
@@ -1441,44 +1446,46 @@ do-while은 "올바른 입력이 들어올 때까지 반복한다"는 의도가 
   👉 그렇다(1) / 아니다(2): 2</p>
 <p>✨ 완료! 총 점수: 2 / 4
 📝 전체 코드</p>
-<h1 id="include_3">include <stdio.h><a class="headerlink" href="#include_3" title="Permanent link">&para;</a></h1>
-<p>int main(void) {</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">int</span><span class="w"> </span><span class="nt">score</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nt">0</span><span class="o">;</span>
-<span class="nt">int</span><span class="w"> </span><span class="nt">answer</span><span class="o">;</span>
-<span class="nt">int</span><span class="w"> </span><span class="nt">i</span><span class="o">;</span>
+<div class="codehilite"><pre><code class="language-c">#include &lt;stdio.h&gt;
 
-<span class="nt">for</span><span class="w"> </span><span class="o">(</span><span class="nt">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nt">1</span><span class="o">;</span><span class="w"> </span><span class="nt">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="nt">4</span><span class="o">;</span><span class="w"> </span><span class="nt">i</span><span class="o">++)</span><span class="w"> </span><span class="p">{</span>
+int main(void) {
+int score = 0;
+int answer;
+int i;
 
-<span class="w">    </span><span class="err">if</span><span class="w"> </span><span class="err">(i</span><span class="w"> </span><span class="err">==</span><span class="w"> </span><span class="err">1)</span><span class="w"> </span><span class="err">printf(&quot;\nQ%d.</span><span class="w"> </span><span class="err">혼자</span><span class="w"> </span><span class="err">있는</span><span class="w"> </span><span class="err">시간이</span><span class="w"> </span><span class="err">편하다\n&quot;,</span><span class="w"> </span><span class="err">i)</span><span class="p">;</span>
-<span class="w">    </span><span class="err">else</span><span class="w"> </span><span class="err">if</span><span class="w"> </span><span class="err">(i</span><span class="w"> </span><span class="err">==</span><span class="w"> </span><span class="err">2)</span><span class="w"> </span><span class="err">printf(&quot;\nQ%d.</span><span class="w"> </span><span class="err">계획</span><span class="w"> </span><span class="err">없이</span><span class="w"> </span><span class="err">여행을</span><span class="w"> </span><span class="err">떠날</span><span class="w"> </span><span class="err">수</span><span class="w"> </span><span class="err">있다\n&quot;,</span><span class="w"> </span><span class="err">i)</span><span class="p">;</span>
-<span class="w">    </span><span class="err">else</span><span class="w"> </span><span class="err">if</span><span class="w"> </span><span class="err">(i</span><span class="w"> </span><span class="err">==</span><span class="w"> </span><span class="err">3)</span><span class="w"> </span><span class="err">printf(&quot;\nQ%d.</span><span class="w"> </span><span class="err">논리가</span><span class="w"> </span><span class="err">감정보다</span><span class="w"> </span><span class="err">중요하다\n&quot;,</span><span class="w"> </span><span class="err">i)</span><span class="p">;</span>
-<span class="w">    </span><span class="err">else</span><span class="w"> </span><span class="err">if</span><span class="w"> </span><span class="err">(i</span><span class="w"> </span><span class="err">==</span><span class="w"> </span><span class="err">4)</span><span class="w"> </span><span class="err">printf(&quot;\nQ%d.</span><span class="w"> </span><span class="err">마감</span><span class="w"> </span><span class="err">직전에</span><span class="w"> </span><span class="err">집중력이</span><span class="w"> </span><span class="err">올라간다\n&quot;,</span><span class="w"> </span><span class="err">i)</span><span class="p">;</span>
+for (i = 1; i &lt;= 4; i++) {
 
-<span class="w">    </span><span class="err">do</span><span class="w"> </span><span class="err">{</span>
-<span class="w">        </span><span class="err">printf(&quot;</span><span class="w">  </span><span class="err">👉</span><span class="w"> </span><span class="err">그렇다(1)</span><span class="w"> </span><span class="err">/</span><span class="w"> </span><span class="err">아니다(2):</span><span class="w"> </span><span class="err">&quot;)</span><span class="p">;</span>
-<span class="w">        </span><span class="err">scanf(&quot;%d&quot;,</span><span class="w"> </span><span class="err">&amp;answer)</span><span class="p">;</span>
+    if (i == 1) printf("\nQ%d. 혼자 있는 시간이 편하다\n", i);
+    else if (i == 2) printf("\nQ%d. 계획 없이 여행을 떠날 수 있다\n", i);
+    else if (i == 3) printf("\nQ%d. 논리가 감정보다 중요하다\n", i);
+    else if (i == 4) printf("\nQ%d. 마감 직전에 집중력이 올라간다\n", i);
 
-<span class="w">        </span><span class="err">if</span><span class="w"> </span><span class="err">(answer</span><span class="w"> </span><span class="err">!=</span><span class="w"> </span><span class="err">1</span><span class="w"> </span><span class="err">&amp;&amp;</span><span class="w"> </span><span class="err">answer</span><span class="w"> </span><span class="err">!=</span><span class="w"> </span><span class="err">2)</span><span class="w"> </span><span class="err">{</span>
-<span class="w">            </span><span class="err">printf(&quot;</span><span class="w">  </span><span class="err">⚠️</span><span class="w"> </span><span class="err">1</span><span class="w"> </span><span class="err">또는</span><span class="w"> </span><span class="err">2만</span><span class="w"> </span><span class="err">입력해주세요!\n&quot;)</span><span class="p">;</span>
-<span class="w">        </span><span class="p">}</span>
+    do {
+        printf("  👉 그렇다(1) / 아니다(2): ");
+        scanf("%d", &amp;answer);
 
-<span class="w">    </span><span class="err">}</span><span class="w"> </span><span class="nt">while</span><span class="w"> </span><span class="o">(</span><span class="nt">answer</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="nt">1</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nt">answer</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="nt">2</span><span class="o">);</span>
+        if (answer != 1 &amp;&amp; answer != 2) {
+            printf("  ⚠️ 1 또는 2만 입력해주세요!\n");
+        }
 
-<span class="w">    </span><span class="nt">if</span><span class="w"> </span><span class="o">(</span><span class="nt">answer</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nt">1</span><span class="o">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="err">score++</span><span class="p">;</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="err">}</span>
+    } while (answer != 1 &amp;&amp; answer != 2);
 
-<span class="nt">printf</span><span class="o">(</span><span class="s2">&quot;\n✨ 완료! 총 점수: %d / 4\n&quot;</span><span class="o">,</span><span class="w"> </span><span class="nt">score</span><span class="o">);</span>
+    if (answer == 1) {
+        score++;
+    }
+}
 
-<span class="nt">return</span><span class="w"> </span><span class="nt">0</span><span class="o">;</span>
+printf("\n✨ 완료! 총 점수: %d / 4\n", score);
+
+return 0;
 </code></pre></div>
 
 <p>}
 ⚠️ 주의할 점
 do-while 끝에 세미콜론(;) 필수!</p>
-<p>} while (조건);  // ← 이거 빠뜨리면 컴파일 에러!
-while (1)은 반드시 break와 짝꿍!
+<div class="codehilite"><pre><code class="language-c">} while (조건);  // ← 이거 빠뜨리면 컴파일 에러!
+</code></pre></div>
+<p>while (1)은 반드시 break와 짝꿍!
 break 없이 while (1)을 쓰면 프로그램이 영원히 끝나지 않습니다.
 실수로 빠졌다면 Ctrl + C로 탈출하세요.</p>
 <p>do-while vs while (1) + break 언제 쓰나요?</p>
@@ -1492,11 +1499,12 @@ do-while문은 조건과 상관없이 무조건 최소 1번은 실행됩니다.<
 <ol>
 <li>아래 코드에서 빠진 것은 무엇인가요?</li>
 </ol>
-<p>do {
+<div class="codehilite"><pre><code class="language-c">do {
     printf("숫자를 입력하세요: ");
     scanf("%d", &amp;num);
 } while (num &lt; 0)
-while (num &lt; 0) 뒤에 세미콜론(;) 이 빠져 있습니다.</p>
+</code></pre></div>
+<p>while (num &lt; 0) 뒤에 세미콜론(;) 이 빠져 있습니다.</p>
 <ol>
 <li>while (1) + break 패턴에서 break를 쓰지 않으면 어떻게 되나요?</li>
 </ol>
@@ -1567,5 +1575,13 @@ while (num &lt; 0) 뒤에 세미콜론(;) 이 빠져 있습니다.</p>
         <script src="../javascripts/title-link.js"></script>
       
     
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        document.querySelectorAll('div.codehilite pre code').forEach(function(block) {
+          hljs.highlightElement(block);
+        });
+      });
+    </script>
   </body>
 </html>
